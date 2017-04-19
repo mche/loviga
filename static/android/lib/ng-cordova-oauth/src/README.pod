@@ -15,3 +15,5 @@
   )],# в oauth.js закомментировал ненужные сайты
 
 Fork from L<https://github.com/nraboy/ng-cordova-oauth>
+
+=cut
