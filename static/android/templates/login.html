@@ -1,0 +1,15 @@
+
+@@@ page/login.html
+
+<ons-page ng-controller="loginControll as ctrl" ng-init="ctrl.Init()">
+
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+  
+  <div ng-if="ctrl.ready" class="container">
+   <form-auth data-success-callback="ctrl.LoginSuccess"></form-auth>
+   
+   <form-oauth data-success-callback="ctrl.LoginSuccess" data-param="param"></form-oauth>
+  </div>
+
+</ons-page>

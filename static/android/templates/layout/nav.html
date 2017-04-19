@@ -1,0 +1,68 @@
+
+@@@ layout/nav.html
+
+<div ng-init=" $ctrl.Init() " ng-hide="1"></div>
+
+<ons-list class="nav" ng-if="$ctrl.ready">
+
+  <ons-list-item ng-click="$ctrl.loadContent('page/transport/search.html')" tappable>
+    <i class="material-icons">search</i>
+    <span>Поиск транспорта</span>
+  </ons-list-item>
+  
+  <ons-list-item ng-show="User.count('transport')" ng-click="$ctrl.loadContent('page/transport/list.html')" tappable>
+    <!--i class="material-icons">local_shipping</i-->
+    <i class="icon-truck"></i>
+    <span>Мой транспорт ({{User.count('transport')}})</span>
+  </ons-list-item>
+  
+  <ons-list-item ng-show="User.profile('id') && !User.count('transport')" ng-click="$ctrl.loadContent('page/transport/form.html')" tappable>
+    <!--i class="material-icons">local_shipping</i-->
+    <i class="icon-truck"></i>
+    <span>Мой транспорт</span>
+    <i class="material-icons">add</i>
+    <!--i class="icon-plus"></i-->
+  </ons-list-item>
+  
+  <ons-list-item ng-show="User.count('asked') || User.count('new_ask')" ng-click="$ctrl.loadContent('page/ask/me-list.html')" tappable>
+    <i class="icon-hand-paper-o fs14"></i>
+    <span>Спрос на мой транспорт({{User.count('new_ask')}}/{{User.count('asked')}})</span>
+  </ons-list-item>
+  
+  <ons-list-item ng-show="User.count('my_ask')" ng-click="$ctrl.loadContent('page/ask/list.html')" tappable>
+    <i class="material-icons">description</i>
+    <span>Мои заявки ({{ User.count('my_ask') }})</span>
+  </ons-list-item>
+  
+  <ons-list-item ng-show="User.profile('id')" ng-click="$ctrl.loadContent('page/profile.html')" tappable>
+    <i class="material-icons blue-text">person</i>
+    <span>Профиль</span>
+  </ons-list-item>
+  
+  <ons-list-item ng-show="!User.profile('id')" ng-click="$ctrl.Login()" tappable>
+    <!--i class="material-icons">exit_to_app</i-->
+    <i class="icon-login-1 blue-text text-darken-3" style=""></i>
+    <span>Вход/регистрация</span>
+  </ons-list-item>
+  
+  <ons-list-item ng-show="User.profile('id')" ng-click="$ctrl.Logout()" tappable>
+    <!--i class="material-icons">lock_outline</i-->
+    <i class="icon-logout-1"></i>
+    
+    <span>Выход</span>
+  </ons-list-item>
+  
+  <ons-list-header>Дополнительно</ons-list-header>
+  <ons-list-item ng-click="$ctrl.clearCache()" tappable>
+    <!--i class="material-icons red-text text-darken-2">close</i-->
+    <i class="icon-cancel-1 red-text text-darken-2" style=""></i>
+    <span>Очистить кэш и закрыть приложение</span>
+  </ons-list-item>
+  
+  <ons-list-item ng-click="$ctrl.CloseApp()" tappable>
+    <!--i class="material-icons red-text">close</i-->
+    <i class="icon-cancel-1 red-text text-darken-2" style=""></i>
+    <span>Закрыть приложение</span>
+  </ons-list-item>
+  
+</ons-list>

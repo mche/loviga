@@ -1,0 +1,19 @@
+
+@@@ page/profile.html
+
+<ons-page ng-controller="ProfileControll as ctrl" ng-init="ctrl.Init()">
+
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+  
+<div class="container" ng-if="ctrl.ready">
+  <div class="right grey-text">#{{ profile.id }}</div>
+  <h1>Мой аккаунт</h1>
+  <form-profile data-profile="profile">
+  </form-profile>
+  
+  <oauth-profile data-profile="profile" data-param="param">
+  </oauth-profile>
+
+</div>
+</ons-page>

@@ -1,0 +1,21 @@
+
+@@@ page/ask/list.html
+
+<ons-page ng-controller="AskListControll as ctrl" ng-init=" ctrl.Init() ">
+
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+
+<!--div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div-->
+<main ng-if="ctrl.ready" class="">
+  
+  <ask-list ng-if="ctrl.ready" data-param="param" data-on-open-ask="ctrl.OpenAsk" data-on-show-transport="ctrl.ShowTransport">
+  </ask-list>
+  
+  <ons-fab position="bottom right" ng-click="ctrl.NewAsk()">
+    <i class="material-icons" style="font-size: 3rem;">note_add</i>
+  </ons-fab>
+  
+</main>
+
+</ons-page>

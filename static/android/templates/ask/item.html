@@ -1,0 +1,16 @@
+
+@@@ page/ask/item.html
+
+<ons-page ng-controller="AskItemControll as ctrl" ng-init=" ctrl.Init() ">
+
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+
+<!--div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div-->
+<main ng-if="ctrl.ready" class="container">
+  
+  <ask-item data-data="ask" data-param="param" data-on-show-tel="ctrl.ShowTel" data-set-states-callback="ctrl.SetStates"></ask-item>
+  
+</main>
+
+</ons-page>

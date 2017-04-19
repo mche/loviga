@@ -1,0 +1,15 @@
+
+@@@ page/transport/form.html
+
+<ons-page ng-controller="TransportFormControll as ctrl" ng-init=" ctrl.Init() ">
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+
+  <div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+  <main ng-if="ctrl.ready" class000="container" style="padding: 0.5rem;">
+  
+  <transport-form ng-if="ctrl.ready" data-param="param" data-on-save-callback="ctrl.Save">
+  </transport-form>
+  
+</main>
+</ons-page>

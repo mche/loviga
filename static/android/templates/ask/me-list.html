@@ -1,0 +1,17 @@
+
+@@@ page/ask/me-list.html
+
+<ons-page ng-controller="AskMeListControll as ctrl" ng-init=" ctrl.Init() ">
+
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+
+<!--div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div-->
+<main ng-if="ctrl.ready" class="">
+  
+  <ask-me-list ng-if="ctrl.ready" data-param="param" data-on-show-ask-callback="ctrl.OpenAsk">
+  </ask-me-list>
+  
+</main>
+
+</ons-page>

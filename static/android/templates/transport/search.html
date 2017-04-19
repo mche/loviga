@@ -1,0 +1,17 @@
+
+@@@ page/transport/search.html
+
+<ons-page ng-controller="mSearchControll as ctrl" ng-init=" ctrl.Init() ">
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+
+  <div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+  <div ng-if="ctrl.ready" class="container">
+  
+  <!--div>{{ data | json }}</div-->
+  
+  <ask-form data-param="ctrl.param" on-show-transport-callback="ctrl.ShowTransport" on-search-callback="ctrl.Search" on-set-search-results-callback="ctrl.SetSearchResults" to-login-callback="ctrl.Login" on-save-ask-callback="ctrl.onSaveAsk" data-on-set-state="ctrl.SetState">
+</ask-form>
+  
+</div>
+</ons-page>

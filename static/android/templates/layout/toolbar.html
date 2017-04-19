@@ -1,0 +1,45 @@
+
+@@@ layout/toolbar.html
+
+<div ng-init="$ctrl.Init()" ng-hide="true"></div>
+<!--ons-template id="app-toolbar.html"-->
+<ons-toolbar ng-if="$ctrl.ready && $ctrl.navPages < 2">
+  <div class="left">
+    <ons-toolbar-button ng-click="$ctrl.Home($index)">
+      <!------ons-icon icon="ion-navicon,  material:md-menu" size="28px" fixed-width="false"></ons-icon-->
+    <!--i class="material-icons">menu</i-->
+      <img alt="" ng-src="{{ $ctrl.srcLogo() }}" class="" style="height:100%; vertical-align: middle;">
+    </ons-toolbar-button>
+    
+    <span><span class="breadcrumb" ng-repeat="t in $ctrl.title" ng-click="$ctrl.Home($index)">{{t | uppercase}}</span></span>
+    
+  </div>
+  <div  class="center"></div>
+  <div  class="right">
+    <!--ons-toolbar-button ng-if="!$ctrl.Login(true)" ng-click="$ctrl.Login()"><i class="material-icons">exit_to_app</i>
+    </ons-toolbar-button>
+    <ons-toolbar-button ng-if="$ctrl.Login(true)" ng-click="$ctrl.toggleMenu()"><i class="material-icons">menu</i>
+    </ons-toolbar-button-->
+    
+    <ons-toolbar-button ng-click="$ctrl.toggleMenu()"><i class="material-icons">menu</i>
+    </ons-toolbar-button>
+    
+  </div>
+</ons-toolbar>
+
+<ons-toolbar ng-if="$ctrl.ready && $ctrl.navPages > 1">
+  <!--div class="left"><ons-back-button>Back</ons-back-button></div-->
+  <div class="left">
+    <ons-toolbar-button ng-click="$ctrl.Back()">
+      <!--i class="material-icons" style="font-weight:500;">arrow_back</i-->
+      <i class="icon-left"></i>
+    </ons-toolbar-button>
+    
+    <span><span class="breadcrumb" ng-repeat="t in $ctrl.title">{{t | uppercase}}</span></span>
+    
+  </div>
+  <div class="center"></div>
+  <div class="right"></div>
+</ons-toolbar>
+
+<!--/ons-template-->

@@ -1,0 +1,17 @@
+
+@@@ page/transport/item-detail.html
+
+<ons-page ng-controller="transportItemDetailControll as ctrl" ng-init=" ctrl.Init() ">
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+
+<div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+<div ng-if="ctrl.ready" class="container">
+  
+  <!--div>{{ data | json }}</div-->
+  
+  <transport-item-detail data-data="data" data-param="param" on-show-tel-callback="ctrl.ShowTel" to-login-callback="ctrl.Login">
+  </transport-item-detail>
+  
+</div>
+</ons-page>

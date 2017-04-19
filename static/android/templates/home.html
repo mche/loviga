@@ -1,0 +1,16 @@
+
+@@@ page/home.html
+
+<ons-page ng-controller="homeControll as ctrl" ng-init=" ctrl.Init() ">
+
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+  
+<div class="container">
+  <div ng-hide=" ctrl.ready " ng-include=" 'progress/load' "></div>
+  <h1>Добро пожаловать!</h1>
+  
+  <menu-nav></menu-nav>
+  
+</div>
+</ons-page>

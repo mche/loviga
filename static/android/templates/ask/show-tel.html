@@ -1,0 +1,16 @@
+
+@@@ page/ask/show-tel.html
+
+<ons-page ng-controller="AskShowTelControll as ctrl" ng-init=" ctrl.Init() ">
+
+  <app-toolbar ng-if="ctrl.ready" data-title="toolbarTitle">
+  </app-toolbar>
+
+<!--div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div-->
+<main ng-if="ctrl.ready" class="container">
+
+  <ask-show-tel data-ask="ask" data-on-show-tel-result="ctrl.ShowTelResult" data-on-show-tel-close="$ctrl.ShowTelClose"></ask-show-tel>
+  
+</main>
+
+</ons-page>
