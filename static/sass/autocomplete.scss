@@ -1,0 +1,13 @@
+.autocomplete-content {
+  position: absolute;
+  width: 100%;
+  /*margin-top: -15px;*/
+}
+
+.autocomplete-content li {
+  padding: 1rem;
+}
+
+.autocomplete-suggestion strong {color:black;}
+
+.autocomplete-selected { background: #F0F0F0; }
