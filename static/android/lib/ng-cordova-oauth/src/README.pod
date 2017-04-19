@@ -1,0 +1,17 @@
+=encoding utf-8
+
+=head1 OAuth for cordova app
+
+Просто конкатенация файлов через Mojolicious::Plugin::AssetPack::Che.pm
+
+  ['ng-cordova-oauth.js'=>qw(
+    android/lib/ng-cordova-oauth/src/utility.js
+    android/lib/ng-cordova-oauth/src/oauth.google.js
+    android/lib/ng-cordova-oauth/src/oauth.mailru.js
+    android/lib/ng-cordova-oauth/src/oauth.vkontakte.js
+    android/lib/ng-cordova-oauth/src/oauth.yandex.js
+    android/lib/ng-cordova-oauth/src/oauth.js
+    android/lib/ng-cordova-oauth/src/plugin.js
+  )],# в oauth.js закомментировал ненужные сайты
+
+Fork from L<https://github.com/nraboy/ng-cordova-oauth>
