@@ -1,0 +1,18 @@
+% my $uid = $c->auth_user->{id}  if $c->is_user_authenticated;
+% my $has_ask = stash('есть мои заявки') // $c->app->models->{'Ask'}->есть_мои_заявки( $uid ) if $uid;
+% my $id = stash 'id';
+% my $title = $id ? 'Моя заявка на транспорт' : 'Мне нужен транспорт';
+% layout 'main';
+
+<div class="right">
+% if ($has_ask) {
+  <a class="btn" href="<%= url_for('мои заявки').($id ? "#ask$id" : '') %>">
+    <i class="material-icons">arrow_back</i>
+    <span>Список моих заявок (<%= $has_ask %>)</span>
+  </a>
+% }
+</div>
+
+<h2><%= $title %></h2>
+
+%= include 'ask/form.component'

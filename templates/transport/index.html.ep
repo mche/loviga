@@ -1,0 +1,23 @@
+
+% layout 'main';
+
+<div
+  ng-app="TransportList"
+  ng-controller="ControllTransportList as ctrl"
+  data-tab-idx="<%= param('s') || 1 %>"
+  >
+  
+  <div class="right">
+    <a class="btn" href="<%= url_for("форма нового транспорта") %>">
+      <i class="material-icons">add_circle_outline</i>
+      <span>Добавить</span>
+    </a>
+  </div>
+  
+%#  <h2><%= title %> {{ctrl.data && '('+ctrl.data.length+')'}}</h2>
+  <div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+  <div ng-if="ctrl.ready">
+    <transport-list data-param="listParam" ></transport-list>
+  </div>
+
+</div>

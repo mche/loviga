@@ -1,0 +1,29 @@
+<div
+  ng-app="SearchTransport">
+  <div
+    ng-controller="Controll as ctrl"
+%#    data-category-tree-data-url="<%= url_for('данные категорий транспорта') %>"
+%#    data-category-tree-data-url="/c/transport/category/tree.json"
+%#    data-search-address-url="<%= url_for('поиск адреса') %>"
+%#    data-search-url="<%= url_for('найти транспорт') %>"
+%#    data-form-data-url="<%= url_with 'данные формы заявки' %>"
+    data-ask-id="<%= stash 'id' %>"
+    data-selected-category="<%= param 'c' || 0 %>"
+%#    data-save-ask-url="<%= url_for('сохранить заявку') %>"
+%#    data-ask-state-url="<%= url_for "сохранить состояние заявки" %>"
+%#    data-address-type-url="<%= url_for('количество адресных типов') %>"
+    
+%#    data-transport-url="<%= url_for('показ транспорта', id=>undef,) %>"
+%# if (! $c->auth_user) {
+%#    data-show-tel-url="<%= url_for('телефон транспорта') %>"
+%# }
+  >
+
+%#= include 'progress', handler=> 'ep';
+  <div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+%#=  <div ng-if="ctrl.ready" ng-include=" 'transport/search' "></div>
+  <transport-search ng-if="ctrl.ready" data-param="param">
+  </transport-search>
+
+</div>
+</div>

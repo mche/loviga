@@ -1,0 +1,20 @@
+% layout 'main';
+
+<div
+  ng-app="AskMeList"
+  ng-controller="Controll as ctrl"
+%#  data-list-url="<%= url_for 'список заявок на мой транспорт' %>"
+  data-tab-status="<%= param('s') || 60 %>"
+%#  data-ask-url="<%= url_for "позиция заявки" %>"
+%#  data-ask-states-url="/c/ask/ask-states.json"
+%#  data-ask-state-url="<%= url_for "сохранить состояние заявки" %>"
+  >
+
+%#  <h2><%= title %> ({{ data.length }})</h2>
+  <div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+  <div ng-if="ctrl.ready">
+%#    <div ng-include=" 'ask/me-list' "></div>
+    <ask-me-list data-param="param"></ask-me-list>
+  </div>
+
+</div>

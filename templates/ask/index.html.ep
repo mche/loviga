@@ -1,0 +1,27 @@
+% layout 'main';
+
+<div
+  ng-app="AskList"
+  ng-controller="Controll as ctrl"
+%#  data-title="<%= title %>"
+  data-status="<%= param('s') || 60 %>"
+  >
+
+  <div class="right">
+    <a class="btn" href="<%= url_for "поиск транспорта" %>">
+      <i class="material-icons">add_circle_outline</i>
+      <span>Новая заявка</span>
+    </a>
+  </div>
+  
+  
+
+  <div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+%#  <div ng-if="ctrl.ready" ng-include=" 'ask/list' ">
+  <ask-list ng-if="ctrl.ready" data-param="listParam">
+  </ask-list>
+%#    
+%#    <ask-list data-data="data" data-tabs="tabs" data-status="<%= param('s') || 60 %>" data-form-url="<%= url_for 'форма заявки' %>" data-transport-url="<%= url_for "позиция транспорта" %>"></ask-list>
+  </div>
+
+</div>

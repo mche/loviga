@@ -1,0 +1,46 @@
+
+% layout 'main';
+
+<div
+  ng-app="categoryTree"
+  ng-controller="CategoryTreeControll as ctrl"
+  data-save-url="<%= $data_save_url %>"
+  data-get-url="<%= $data_url %>"
+  data-template-url="<%= $template_url %>"
+  data-img-path="<%= $img_path %>"
+>
+  <div class="row">
+    <div class="col s12">
+      <h3>Редактирование категорий транспорта</h3>
+
+      <button class="btn" ng-click="expandAll()" ng-show="!!collapsed">Развернуть</button>
+      <button class="btn" ng-click="collapseAll()" ng-show="!collapsed">Свернуть</button>
+      <button class="btn" ng-click="saveAll()">Сохранить все</button>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div ui-tree="treeOptions" data-drag-enabled000="true" id="tree-root">
+        <ol ui-tree-nodes data-nodrop-enabled00 ng-model="data">
+          <li ng-repeat="node in data" ui-tree-node ng-include="getTplUrl()"></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <div class="info">
+        {{info}}
+      </div>
+      <pre class="code">{{ data | json }}</pre>
+    </div>
+    <div class="col s6">
+      <h3>Отладка</h3>
+
+      <pre class="code">{{ debug | json }}</pre>
+    </div>
+  </div>
+</div>

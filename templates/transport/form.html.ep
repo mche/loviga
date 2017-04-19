@@ -1,0 +1,43 @@
+% my $has_transport = stash('есть транспорт') // $c->app->models->{'Transport'}->есть_транспорт( $c->auth_user->{id} );
+% my $id = stash("id");
+% layout 'main';
+
+
+<div
+  ng-app="TransportForm"
+  ng-controller="Controll as ctrl"
+%#  data-form-data-url="<%= url_with 'данные формы транспорта' %>"
+  data-transport-id="<%= $id %>"
+  data-transport-cnt="<%= $has_transport %>"
+  data-selected-category="<%= $c->vars('c') %>"
+%#  data-back-url="<%= url_for('мой транспорт') %>"
+%#  data-search-address-url="<%= url_for('поиск адреса') %>"
+%#  data-img-upload-url="<%= url_for('сохранить картинку транспорта') %>"
+%#  data-address-type-url="<%= url_for('типы адресов') %>"
+>
+
+  <div class="right">
+
+% if ($has_transport > 1) {
+    <a class="btn" href="<%= url_for('мой транспорт') . ($id ? '#transport'.$id : '') %>" title="моего транспорта">
+      <i class="material-icons">arrow_back</i>
+      <span>К списку (<%= $has_transport %>)</span>
+    </a>
+% }
+% if (!$has_transport && $id) {
+    <a class="btn" href="<%= url_for('форма нового транспорта') %>">
+      <i class="material-icons">add_circle</i>
+      <span>Добавить еще транспорт/услугу</span>
+    </a>
+% }
+
+  </div>
+
+  <h2>Ввод данных о транспорте или услуге</h2>
+  
+  <div ng-hide="ctrl.ready" ng-include=" 'progress/load' "></div>
+
+  <transport-form ng-if="ctrl.ready" data-param="param">
+  </transport-form>
+
+</div>
