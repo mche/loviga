@@ -627,7 +627,7 @@ angular.module('main')
       $timeout(function() {
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
-        console.log(angular.toJson($ctrl.param));
+        //~ console.log(angular.toJson($ctrl.param));
         $ctrl.ready = true;
       });
     };
