@@ -9,7 +9,7 @@
 
   <div class="right">
     <a class="btn" href="<%= url_for "поиск транспорта" %>">
-      <i class="material-icons">add_circle_outline</i>
+      <i class="icon-plus-circle"></i>
       <span>Новая заявка</span>
     </a>
   </div>
