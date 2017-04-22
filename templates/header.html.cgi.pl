@@ -25,16 +25,17 @@ div({-class=>"nav-wrapper",},
   h1({-class=>"left white-text"}, $c->stash('header-title') || $c->title || $c->config('Проект')),
   
   #~ div({-class=>"form-search right", -style=>"width: 55%; margin-right: 0;"}, $c->include('forms/search',),),
-  
-  ul({-class000=>"fixed-action-btn horizontal click-to-toggle", -style=>"position:absolute; top: 0px; right: 0px;",},#hide-on-med-and-down0100
-    
+  ul({-class=>"left grey-text"},
     li({},
       a({-href=>"javascript:",},
         i({-class=>"material-icons",}, 'search'),
+        span({}, "Поиск транспорта"),
       ),
       
     ),
-    
+  ),
+  
+  ul({-class000=>"fixed-action-btn horizontal click-to-toggle", -style=>"position:absolute; top: 0px; right: 0px;",},#hide-on-med-and-down0100
     $signed
     ? li({-class=>"notifications-container", }, a({-class=>"button-collapse000 btn-floating btn-large black right-side full hide-on-large-only000", -style=>"", 'data-activates'=>"right-side-top-nav", -href=>"#", },#'cachedAjaxScript'=>"/js/materialize/sideNav.js",
       #~ ($has_new_ask || 1) && span({-class=>"notifications-container", },
