@@ -532,7 +532,9 @@ angular.module('main')
 .controller('menuController', function($scope) {//  InitApp, User, Debug, Util
   var ctrl = this;
   
-  ctrl.Init = function(){};
+  ctrl.$onInit = function(){
+    $scope.param={"splitter": appMenu};
+  };
 })
 //=========================================================
 .controller('ProfileControll', function($scope, $http, $timeout, Util, User) {
