@@ -29,7 +29,7 @@ div({-class=>"nav-wrapper",},
   ul({-class000=>"fixed-action-btn horizontal click-to-toggle", -style=>"position:absolute; top: 0px; right: 0px;",},#hide-on-med-and-down0100
     
     li({},
-      a({-href="javascript:",},
+      a({-href=>"javascript:",},
         i({-class=>"material-icons",}, 'search'),
       ),
       
