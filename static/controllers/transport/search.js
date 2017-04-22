@@ -29,8 +29,9 @@ var Component = function  ($scope, $timeout, $window, SearchTransportLib) {// $s
   //~ if ($ctrl.ask === undefined ) {AskFormData.get($ctrl.askId, $ctrl.selectedCategory, function(resp) { $ctrl.ask = resp.data; $ctrl.ready = true;});}
   //~ else {$ctrl.ready = true;}
   
-  $ctrl.Init = function() {
+  $ctrl.$onInit = function() {
     //~ $ctrl.param = {"id": parseInt($ctrl.askId) || 0, "selectedCategory": parseInt($ctrl.selectedCategory) || 0, "searchResults": undefined};
+    if(!$ctrl.param) $ctrl.param = {};
     $ctrl.ready = true;
     $timeout(function() {
       $('#search-results-show').sideNav({menuWidth: $('body').innerWidth()*5/6, edge: 'left', closeOnClick: false,  draggable: true, onClick: function(side, opts) {side.menu.css('width', '88%');}});
