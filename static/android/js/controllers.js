@@ -533,42 +533,6 @@ angular.module('main')
   var ctrl = this;
   
   ctrl.Init = function(){};
-  /*
-  $scope.User = User;
-  
-  //~ console.log("menuController "+appNavigator.pages[0]);
-  
-  ctrl.loadContent = function(page) {
-    //~ Debug.log("Загрузка из меню ", page);
-    appMenu.content.load(page).then(function() {appMenu.right.close();});
-  };
-  
-  ctrl.Logout = function () {
-    InitApp.logout()
-      .then(function() {
-        appMenu.content.load('page/home.html').then(function() {
-          appMenu.right.close();
-        });//Util.pageUrlOrCache('home') || 
-      });
-  };
-  
-  ctrl.Login = function() {//
-      //~ if(flag) return User.profile('id') || appMenu.content.page == 'page/login.html';// не нужен для залогина
-      appMenu.content.load('page/login.html').then(function() {
-          appMenu.right.close();
-        });
-    };
-  
-  ctrl.clearCache = function () {
-    Util.clearCache();
-  };
-  
-  ctrl.CloseApp = function () {
-    //~ Debug.log("CloseApp: ", navigator.app);
-    navigator.app.exitApp();
-    
-  };
-  */
 })
 //=========================================================
 .controller('ProfileControll', function($scope, $http, $timeout, Util, User) {
