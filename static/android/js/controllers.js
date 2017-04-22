@@ -606,14 +606,17 @@ angular.module('main')
 .component('menuNav', {
   templateUrl: "layout/nav.html",
   bindings: {
+    param:'<',
   },
   controller: function($scope, $timeout, InitApp, User, Debug, Util) {//$sessionStorage, 
     var $ctrl = this;
     $scope.User = User;
     
-    $ctrl.Init = function() {
+    $ctrl.$onInit = function() {
       $timeout(function() {
-        
+        if(!$ctrl.param) $ctrl.param = {};
+        //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
+        console.log(angular.toJson($ctrl.param));
         $ctrl.ready = true;
       });
     };
