@@ -9,7 +9,7 @@
   
   <div class="right">
     <a class="btn" href="<%= url_for("форма нового транспорта") %>">
-      <i class="material-icons">add_circle_outline</i>
+      <i class="icon-plus-circle"></i>
       <span>Добавить</span>
     </a>
   </div>
