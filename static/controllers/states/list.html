@@ -13,7 +13,7 @@
           <i ng-repeat="ic in States.SplitIconClass(s['код состояния'])"  class="{{ic}}"></i> <!-- class000="{{States.get(s['код состояния'], 'icon')}}"-->
         </span>
         <span>{{States.get(s['код состояния'], 'заголовок кнопки') || s["состояние"]}}</span>
-        <i ng-if="s['установил состояние'] && !$ctrl.isMyState(s)" class="material-icons"  title="от {{$ctrl.param.asker ? 'исполнителя' : 'заказчика'}}">reply_all</i>
+        <i ng-if="s['установил состояние'] && !$ctrl.isMyState(s)" class="icon-reply-all"  title="от {{$ctrl.param.asker ? 'исполнителя' : 'заказчика'}}"></i>
       </span>
       <span class="fs8 grey-text">
         <!-- i class="material-icons tiny" style="vertical-align: middle;">today</i -->
