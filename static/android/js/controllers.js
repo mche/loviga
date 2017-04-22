@@ -244,7 +244,7 @@ angular.module('main')
     //~ lib.ClearSearchResults();
     var parent = appNavigator.topPage.data.mSearchControll;
     parent.SetSearchResults(0);
-    parent.$scope.param.scrollToSave = true;
+    parent.param.scrollToSave = true;
     appNavigator.popPage();
   };
   
