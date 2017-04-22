@@ -660,7 +660,9 @@ angular.module('main')
   
     $ctrl.loadContent = function(page) {
       //~ Debug.log("Загрузка из меню ", page);
-      appMenu.content.load(page).then(function() {appMenu.right.close();});
+      //~ appMenu.content.load(page).then(function() {appMenu.right.close();});
+      appMenu.right.close();
+      appNavigator.pushPage(page).then(function() {});
     };
     
     $ctrl.Logout = function () {
