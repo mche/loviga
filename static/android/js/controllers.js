@@ -533,12 +533,14 @@ angular.module('main')
   var ctrl = this;
   
   ctrl.$onInit = function(){
-    $scope.param={};//"splitter": appMenu  appMenu is not defined
+    
   };
   
   ctrl.Init = function(splitter){
     //~ $scope.param={};//"splitter": appMenu  appMenu is not defined
     console.log(splitter);
+    $scope.param={"splitter": splitter};//"splitter": appMenu  appMenu is not defined
+    ctrl.ready=true;
   };
 })
 //=========================================================
