@@ -539,8 +539,10 @@ angular.module('main')
   ctrl.Init = function(splitter){
     //~ $scope.param={};//"splitter": appMenu  appMenu is not defined
     //~ console.log(splitter);
-    $scope.param={"splitter": splitter};//"splitter": appMenu  appMenu is not defined
-    ctrl.ready=true;
+    $timeout(function(){
+      $scope.param={"splitter": splitter};//"splitter": appMenu  appMenu is not defined
+      ctrl.ready=true;
+    });
   };
 })
 //=========================================================
@@ -623,7 +625,7 @@ angular.module('main')
     
     $ctrl.$onInit = function() {
       $timeout(function() {
-        if(!$ctrl.param) $ctrl.param = {};
+        //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
         console.log(angular.toJson($ctrl.param));
         $ctrl.ready = true;
