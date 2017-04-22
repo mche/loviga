@@ -529,7 +529,7 @@ angular.module('main')
 
 //=========================================================
 
-.controller('menuController', function($scope) {//  InitApp, User, Debug, Util
+.controller('menuController', function($scope, $timeout) {//  InitApp, User, Debug, Util
   var ctrl = this;
   
   ctrl.$onInit = function(){
