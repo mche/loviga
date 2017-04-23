@@ -625,8 +625,8 @@ angular.module('main')
     
     $ctrl.$onInit = function() {
       $timeout(function() {
-        console.log("menuNav"+$($element[0]).closest('ons-splitter'));
-        console.log("menuNav"+appMenu);
+        console.log("menuNav"+($($element[0]).closest('ons-splitter')===appMenu));
+        //~ console.log("menuNav"+);
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
         //~ console.log(angular.toJson($ctrl.param));
