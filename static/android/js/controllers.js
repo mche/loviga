@@ -529,14 +529,14 @@ angular.module('main')
 
 //=========================================================
 
-.controller('menuController', function($scope, $timeout) {//  InitApp, User, Debug, Util
+.controller('SplitterControll', function($scope, $timeout) {//  InitApp, User, Debug, Util
   var ctrl = this;
   
   ctrl.$onInit = function(){
     ctrl.ready=true;
   };
   
-  ctrl.Init = function(splitter){
+  ctrl.Init000 = function(splitter){
     //~ $scope.param={};//"splitter": appMenu  appMenu is not defined
     //~ console.log(splitter);
     $timeout(function(){

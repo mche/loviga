@@ -1,10 +1,10 @@
 
 @@@ layout/menu.html
 
-<ons-splitter var="appMenu">
+<ons-splitter var="appMenu" ng-controller="SplitterControll as ctrl">
   <ons-splitter-side side="right" width="95%" collapse swipeable >
-    <ons-page ng-controller="menuController as ctrl" ng-init000="ctrl.Init(appMenu)">
-      <menu-nav ng-if000="ctrl.ready" ng-init="$ctrl.Init(appMenu)" data-param000="param"></menu-nav>
+    <ons-page ng-controller000="menuController as ctrl" ng-init000="ctrl.Init(appMenu)">
+      <menu-nav ng-if="ctrl.ready" ng-init="$ctrl.Init(appMenu)" data000-param000="param"></menu-nav>
     </ons-page>
   </ons-splitter-side>
   
