@@ -623,7 +623,7 @@ angular.module('main')
     var $ctrl = this;
     $scope.User = User;
     
-    $ctrl.$onInit = function() {
+    $ctrl.$onInit000 = function() {
       $timeout(function() {
         //~ console.log("menuNav"+$($element[0]).closest('ons-splitter').get(0).ng339);
         //~ console.log("menuNav"+);
@@ -634,7 +634,7 @@ angular.module('main')
       });
     };
     
-    $ctrl.Init00 = function(splitter) {
+    $ctrl.Init = function(splitter) {
       $timeout(function() {
         console.log("menuNav"+splitter);
         $ctrl.ready = true;
