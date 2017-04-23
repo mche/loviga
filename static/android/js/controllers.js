@@ -529,7 +529,7 @@ angular.module('main')
 
 //=========================================================
 
-.controller('menuController', function($scope, $timeout) {//  InitApp, User, Debug, Util
+.controller('SplitterControll', function($scope, $timeout) {//  InitApp, User, Debug, Util
   var ctrl = this;
   
   ctrl.$onInit = function(){
@@ -630,7 +630,7 @@ angular.module('main')
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
         console.log(appMenu);
-        
+        $ctrl.ready = true;
       });
     };
     
