@@ -587,22 +587,23 @@ angular.module('main')
         if ($ctrl.navPages > 1) $ctrl.title.unshift($localStorage.CONFIG.appName);
         //~ console.log("appToolbar title: "+angular.toJson($ctrl.title));
         //~ console.log("appToolbar center: "+angular.toJson($ctrl.center));
+        $ctrl.appMenu = appMenu;
         $ctrl.ready = true;
       });
     };
     
     $ctrl.toggleMenu = function() {
-      appMenu.right.toggle();
+      $ctrl.appMenu.right.toggle();
     };
     
     $ctrl.Home = function(idx){//
       if (idx > 0) return;
-      appMenu.content.load('page/home.html');//Util.pageUrlOrCache('home') || 
+      $ctrl.appMenu.content.load('page/home.html');//Util.pageUrlOrCache('home') || 
     };
     
     $ctrl.Login = function(flag) {// не исп
-      if(flag) return User.profile('id') || appMenu.content.page == 'page/login.html';// не нужен для залогина
-      appMenu.content.load('page/login.html');
+      if(flag) return User.profile('id') || $ctrl.appMenu.content.page == 'page/login.html';// не нужен для залогина
+      $ctrl.appMenu.content.load('page/login.html');
     };
     
     $ctrl.Back = function (){
@@ -632,25 +633,25 @@ angular.module('main')
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
         //~ console.log(appMenu);
+        $ctrl.appMenu = appMenu;
         $ctrl.ready = true;
       });
     };
     
+    /*
     $ctrl.Init = function(splitter) {
       //~ $timeout(function() {
         console.log("menuNav "+splitter);
         //~ $ctrl.ready = true;
       //~ });
       return true;
-    };
-      
+    };*/
   
-  //~ console.log("menuController "+appNavigator.pages[0]);
   
     $ctrl.loadContent = function(page) {
       //~ Debug.log("Загрузка из меню ", page);
       //~ appMenu.content.load(page).then(function() {appMenu.right.close();});
-      appMenu.right.close();
+      $ctrl.appMenu.right.close();
       appNavigator.pushPage(page).then(function() {});
     };
     
@@ -668,7 +669,7 @@ angular.module('main')
     
     $ctrl.Login = function() {//
         //~ if(flag) return User.profile('id') || appMenu.content.page == 'page/login.html';// не нужен для залогина
-        appMenu.content.load('page/login.html').then(function() {
+        $ctrl.appMenu.content.load('page/login.html').then(function() {
             appMenu.right.close();
           });
       };
