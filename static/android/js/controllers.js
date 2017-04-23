@@ -623,20 +623,22 @@ angular.module('main')
     var $ctrl = this;
     $scope.User = User;
     
-    $ctrl.$onInit = function() {
+    $ctrl.$onInit000 = function() {
       $timeout(function() {
         //~ console.log("menuNav"+$($element[0]).closest('ons-splitter').get(0).ng339);
         //~ console.log("menuNav"+);
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
         console.log(appMenu);
-        $ctrl.ready = true;
+        
       });
     };
     
     $ctrl.Init = function(splitter) {
-      console.log("menuNav"+splitter);
-      
+      $timeout(function() {
+        console.log("menuNav"+splitter);
+        $ctrl.ready = true;
+      });
     };
       
   
