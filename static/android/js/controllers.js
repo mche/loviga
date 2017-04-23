@@ -577,7 +577,7 @@ angular.module('main')
   controller: function($scope, $timeout, $localStorage, Util, appRoutes, User) {//$sessionStorage, 
     var $ctrl = this;
     
-    $ctrl.Init = function() {
+    $ctrl.$onInit = function() {
       $timeout(function() {
         //~ $ctrl.title = $ctrl.title || $scope.toolbarTitle || [];
         $ctrl.title = $ctrl.title || [];
@@ -619,12 +619,14 @@ angular.module('main')
   bindings: {
     param:'<',
   },
-  controller: function($scope, $timeout, InitApp, User, Debug, Util) {//$sessionStorage, 
+  controller: function($scope, $element, $timeout, InitApp, User, Debug, Util) {//$sessionStorage, 
     var $ctrl = this;
     $scope.User = User;
     
     $ctrl.$onInit = function() {
       $timeout(function() {
+        console.log("menuNav"+$($element[0]).closest('ons-splitter'));
+        console.log("menuNav"+appMenu);
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
         //~ console.log(angular.toJson($ctrl.param));
