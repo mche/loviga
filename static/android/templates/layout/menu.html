@@ -1,7 +1,7 @@
 
 @@@ layout/menu.html
 
-<ons-splitter var="appMenu" ng-controller="SplitterControll as ctrl">
+<ons-splitter var="appMenu" ng-controller="SplitterControll as ctrl" ng-init="ctrl.Init(appMenu)">
   <ons-splitter-side side="right" width="95%" collapse swipeable >
     <ons-page ng-controller000="menuController as ctrl">
       <menu-nav ng-if="$ctrl.Init(appMenu)"></menu-nav>

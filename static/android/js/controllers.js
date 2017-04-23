@@ -532,17 +532,18 @@ angular.module('main')
 .controller('SplitterControll', function($scope, $timeout) {//  InitApp, User, Debug, Util
   var ctrl = this;
   
-  ctrl.$onInit = function(){
-    ctrl.ready=true;
-  };
+  //~ ctrl.$onInit = function(){
+    //~ console.log("SplitterControll init"+appMenu);
+    //~ ctrl.ready=true;
+  //~ };
   
-  ctrl.Init000 = function(splitter){
+  ctrl.Init = function(splitter){
     //~ $scope.param={};//"splitter": appMenu  appMenu is not defined
-    //~ console.log(splitter);
-    $timeout(function(){
-      $scope.param={"splitter": splitter};//"splitter": appMenu  appMenu is not defined
+    console.log("SplitterControll init"+splitter);
+    //~ $timeout(function(){
+      $scope.splitter = splitter;//"splitter": appMenu  appMenu is not defined
       
-    });
+    //~ });
   };
 })
 //=========================================================
@@ -629,16 +630,16 @@ angular.module('main')
         //~ console.log("menuNav"+);
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
-        console.log(appMenu);
+        //~ console.log(appMenu);
         $ctrl.ready = true;
       });
     };
     
     $ctrl.Init = function(splitter) {
-      $timeout(function() {
-        console.log("menuNav"+splitter);
-        $ctrl.ready = true;
-      });
+      //~ $timeout(function() {
+        console.log("menuNav "+splitter);
+        //~ $ctrl.ready = true;
+      //~ });
       return true;
     };
       
