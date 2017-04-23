@@ -655,12 +655,15 @@ angular.module('main')
     };
     
     $ctrl.Logout = function () {
+      //~ appMenu.right.close();
       InitApp.logout()
         .then(function() {
-          appMenu.content.load('page/home.html').then(function() {
-            appMenu.right.close();
-          });//Util.pageUrlOrCache('home') || 
+          $ctrl.loadContent('page/home.html');
+          //~ appMenu.content.load('page/home.html').then(function() {
+            //~ appMenu.right.close();
+          //~ });//Util.pageUrlOrCache('home') || 
         });
+        
     };
     
     $ctrl.Login = function() {//
