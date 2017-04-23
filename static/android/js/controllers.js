@@ -539,11 +539,12 @@ angular.module('main')
   
   ctrl.Init = function(splitter){
     //~ $scope.param={};//"splitter": appMenu  appMenu is not defined
-    console.log("SplitterControll init"+splitter);
-    //~ $timeout(function(){
+    $timeout(function(){
+    console.log("SplitterControll init "+splitter);
+    
       $scope.splitter = splitter;//"splitter": appMenu  appMenu is not defined
       
-    //~ });
+    });
   };
 })
 //=========================================================
