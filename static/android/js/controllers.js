@@ -625,7 +625,7 @@ angular.module('main')
     
     $ctrl.$onInit = function() {
       $timeout(function() {
-        console.log("menuNav"+$($element[0]).closest('ons-splitter').get(0).ng339);
+        //~ console.log("menuNav"+$($element[0]).closest('ons-splitter').get(0).ng339);
         //~ console.log("menuNav"+);
         //~ if(!$ctrl.param) $ctrl.param = {};
         //~ if(!$ctrl.param.splitter) $ctrl.param.splitter = appMenu;
@@ -634,6 +634,10 @@ angular.module('main')
       });
     };
     
+    $ctrl.Init = function(splitter) {
+      console.log("menuNav"+splitter);
+      
+    };
       
   
   //~ console.log("menuController "+appNavigator.pages[0]);
