@@ -6,7 +6,7 @@
 
 <ul>
   <li ng-repeat="site in data" ng-class="{'site_joined': site.profile}">
-    <div class="card teal darken-3">
+    <div class="card cyan darken-3">
       <div class="card-content white-text">
         <div class="card-title000">
           <a class="btn-floating000 white-text" ng-class000="$ctrl.btnClass(site)" href="javascript: " ng-click="$ctrl.Connect(site)" title="{{site.profile ? 'уже есть авторизация этого сайта' : 'присоединить в профиль вход через этот сайт'}}" style="line-height: normal; white-space: nowrap;">
