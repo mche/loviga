@@ -28,7 +28,7 @@ div({-class=>"nav-wrapper",},
   
   #~ div({-class=>"form-search right", -style=>"width: 55%; margin-right: 0;"}, $c->include('forms/search',),),
   ul({-class=>"left "},
-    $form_search ? li({},
+    $form_search =~  ? li({},
       h2(a({-id=>"nav-search-show", -class=>"black-text", -href=>"javascript:",},
         i({-class=>"material-icons",}, 'search'),
         span({-class=>"hide-on-small-only",}, "Поиск транспорта"),
@@ -70,7 +70,7 @@ div({-class=>"nav-wrapper",},
 ),
 
 div({-class=>"nav-content",},
-  $form_search ? div({-class=>"form-search hide-000",  -style=>"display: none;",}, $form_search,) : (),
+  $form_search =~ /\w/ ? div({-class=>"form-search hide-000",  -style=>"display: none;",}, $form_search,) : (),
 ),
 
 ),
