@@ -5,11 +5,11 @@
 <!--h2>Вход/регистрация через аккаунты сайтов</h2-->
 
 <ul>
-  <li ng-repeat="site in data" ng-class="{'site_joined': site.profile}">
+  <li ng-repeat="site in data" ng-class="{'site_joined': site.profile}" style="padding: 1rem 0rem;">
     <!--div class="card teal darken-3"-->
       <!--div class="card-content white-text"-->
         <!--div class="card-title000"-->
-        <a class="btn btn-large" ng-click="$ctrl.Connect(site)" href="javascript: ">
+        <a class="btn btn-large" ng-click="$ctrl.Connect(site)" href="javascript: " style="text-transform: none;">
           <!--span class="btn-floating000"   style000="line-height: normal;"-->
             <img ng-src="{{$ctrl.imgSrc(site)}}" style="width: 3rem; vertical-align: middle;" alt="{{site.name || site.site_name}} logo" class="circle" ng-class="$ctrl.btnClass(site)"/>
           <!--/span-->
