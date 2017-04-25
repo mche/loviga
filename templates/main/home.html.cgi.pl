@@ -6,7 +6,7 @@ my $has_ask = $c->stash('есть мои заявки') // $c->app->models->{'As
   if $uid;
 my $has_new_ask = $c->stash('есть новые заявки') // $c->app->models->{'Ask'}->есть_новые_заявки($uid)
   if $uid;
-$c->layout('main', handler=>'ep', title=>'Начало');
+$c->layout('main', handler=>'ep', 'title-only'=>'Начало');
 
 h1('Добро пожаловать'),
 p({}, "Сервис ..." x 100),
