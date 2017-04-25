@@ -27,7 +27,7 @@ var formProfileComp = function($scope, $attrs, $http, $q, $window, $timeout, app
 
     $ctrl.init_login = $ctrl.profile.login;
     $ctrl.profile.pw=[];
-    if($ctrl.oldPw) ctrl.data.pw[0]=$ctrl.oldPw;
+    if($ctrl.oldPw) $ctrl.profile.pw[0]=$ctrl.oldPw;
     if(!$ctrl.profile.names) $ctrl.profile.names = [];
     $ctrl.init_names = $ctrl.profile.names.join(';');
     $timeout(function() {$ctrl.login_tel = phoneInput.validate($ctrl.profile.login);});
