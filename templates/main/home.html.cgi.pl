@@ -6,10 +6,10 @@ my $has_ask = $c->stash('есть мои заявки') // $c->app->models->{'As
   if $uid;
 my $has_new_ask = $c->stash('есть новые заявки') // $c->app->models->{'Ask'}->есть_новые_заявки($uid)
   if $uid;
-$c->layout('main', handler=>'ep', title0000=>'Вход');
+$c->layout('main', handler=>'ep', title=>'Начало');
 
 h1('Добро пожаловать'),
-p({}, "Сервис ..."),
+p({}, "Сервис ..." x 100),
 
 ($c->is_user_authenticated || ()) 
 && ul(
