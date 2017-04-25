@@ -6,12 +6,14 @@ $(document).ready(function () {
   
   $('#nav-search-show').on('click', function(ev){
     //~ console.log('#nav-search-show click ', ev.target);
-    var form_search = $('.nav-content .form-search', $(ev.target).closest('nav'));
+    var target = $(ev.target);
+    var form_search = $('.nav-content .form-search', target.closest('nav'));
+    var a_target = target.closest('a');
     form_search.toggle('slow', function(){//done
       $('input[type="search"]', form_search).focus();
-      
-      
+      $('i.close', form_search).one('click', function(ev){form_search.toggle('slow'); a_target.toggle('fast');});
     });
+    a_target.toggle('fast');//#nav-search-show
   });
   
   var search = $('#search');
