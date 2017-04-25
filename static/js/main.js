@@ -6,7 +6,12 @@ $(document).ready(function () {
   
   $('#nav-search-show').on('click', function(ev){
     //~ console.log('#nav-search-show click ', ev.target);
-    $('.nav-content .form-search', $(ev.target).closest('nav')).toggle('slow');
+    var form_search = $('.nav-content .form-search', $(ev.target).closest('nav'));
+    form_search.toggle('slow', function(){//done
+      $('input[type="search"]', form_search).focus();
+      
+      
+    });
   });
   
   var search = $('#search');
