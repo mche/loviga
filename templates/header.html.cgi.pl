@@ -9,10 +9,12 @@ my $has_new_ask = $c->stash('есть новые заявки') // $c->app->mode
 my $has_my_ask = $c->stash('есть мои заявки') // $c->app->models->{'Ask'}->есть_мои_заявки($signed)
   if $signed;
 
+my $form_search = $c->include('forms/search',);
+
 header(
 div({-class=>"header clearfix",},
 
-nav({-class=>"top"},
+nav({-class=>"nav-extended top"},
 div({-class=>"nav-wrapper",},
   div({-class=>"logo left",},
     a({-href=>"/", -class=>"brand-logo1 btn-floating btn-large teal lighten-1",},
@@ -26,11 +28,11 @@ div({-class=>"nav-wrapper",},
   
   #~ div({-class=>"form-search right", -style=>"width: 55%; margin-right: 0;"}, $c->include('forms/search',),),
   ul({-class=>"left "},
-    li({},
-      a({-class=>"black-text fs14", -href=>"javascript:",},
+    ($form_search || ()) && li({},
+      h3(a({-id=>"nav-search-show", -class=>"black-text", -href=>"javascript:",},
         i({-class=>"material-icons",}, 'search'),
-        span({-class=>"hide-on-small-only000",}, "Поиск транспорта"),
-      ),
+        span({-class=>"hide-on-small-only",}, "Поиск транспорта"),
+      ),),
       
     ),
   ),
@@ -66,6 +68,11 @@ div({-class=>"nav-wrapper",},
   
 
 ),
+
+div({-class=>"nav-content",},
+  ($form_search || ()) && div({-class=>"form-search hide",}, $form_search,),
+),
+
 ),
 
 #~ $c->stash('javascripts', $c->stash('javascripts') ? () : []) && undef,

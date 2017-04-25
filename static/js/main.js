@@ -4,6 +4,10 @@ $(document).ready(function () {
   //~ if (atopnav.get(0)) atopnav.
   $(".right-side").sideNav({menuWidth: $('body').innerWidth()*2/4, edge: 'right', closeOnClick: false,  draggable: true, onClick: function(side, opts) {side.menu.css('width', '51%')}});// Initialize menu button
   
+  $('#nav-search-show').on('click', function(ev){
+    console.log('#nav-search-show click ', ev.target);
+  });
+  
   var search = $('#search');
   if (!search.get(0)) return;
   search.autocomplete({

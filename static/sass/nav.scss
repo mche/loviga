@@ -68,3 +68,7 @@ main nav .tabs .tab i {// выравнивание иконки
 nav .input-field label i, nav .input-field label.active i {
     color: #000;
 }
+
+nav.nav-extended .nav-wrapper {// почему нет в дистре? это для расширения верхней полоски навигации полем поиска
+  min-height: 64px;
+}
