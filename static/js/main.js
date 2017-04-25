@@ -5,7 +5,8 @@ $(document).ready(function () {
   $(".right-side").sideNav({menuWidth: $('body').innerWidth()*2/4, edge: 'right', closeOnClick: false,  draggable: true, onClick: function(side, opts) {side.menu.css('width', '51%')}});// Initialize menu button
   
   $('#nav-search-show').on('click', function(ev){
-    console.log('#nav-search-show click ', ev.target);
+    //~ console.log('#nav-search-show click ', ev.target);
+    $('.nav-content .form-search', $(ev.target).closest('nav')).toggle('slow');
   });
   
   var search = $('#search');
