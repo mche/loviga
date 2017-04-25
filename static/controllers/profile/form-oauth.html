@@ -10,9 +10,9 @@
       <!--div class="card-content white-text"-->
         <!--div class="card-title000"-->
         <a class="btn btn-large" ng-click="$ctrl.Connect(site)" href="javascript: ">
-          <span class="btn-floating000" ng-class="$ctrl.btnClass(site)"  style="line-height: normal;">
-            <img ng-src="{{$ctrl.imgSrc(site)}}" style="width: 3rem; vertical-align: middle;" alt="{{site.name || site.site_name}} logo" class="circle" />
-          </span>
+          <!--span class="btn-floating000"   style000="line-height: normal;"-->
+            <img ng-src="{{$ctrl.imgSrc(site)}}" style="width: 3rem; vertical-align: middle;" alt="{{site.name || site.site_name}} logo" class="circle" ng-class="$ctrl.btnClass(site)"/>
+          <!--/span-->
           <span class="fs14">{{ site.title || site.name || site.site_name }}</span>
         <!--/div-->
         </a>
