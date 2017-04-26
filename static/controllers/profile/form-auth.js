@@ -19,14 +19,17 @@ var Controll = function ($scope, loadTemplateCache, appRoutes) {//md5,
 
 };
 
-var ComponentAuth = function ($http, $window,  $q, appRoutes, phoneInput) {
+var ComponentAuth = function ($http, $element, $window,  $q, appRoutes, phoneInput) {
   var $ctrl = this;
   
   //~ console.log("form auth "+$ctrl.parentCtrl);
 
   $ctrl.$onInit = function () {
     $ctrl.ready = true;
-    
+    $timeout(function() {
+      var ul = $('ul.tabs', $($element[0]));
+      ul.tabs();
+    });
     
   };
   

@@ -23,13 +23,13 @@
         <label for="login" data-error="" data-success="" class="active">Телефон</label>
       </div>
       
-      <div class="right-align">
+      <!--div class="right-align">
         <!--input name="radio_login" type="radio" id="radio_login_email" ng-model="login_email" ng-value="true">
-        <label for="radio_login_email">логин@email</label-->
+        <label for="radio_login_email">логин@email</label--/>
         <input type="checkbox" id="login_tel" ng-model="$ctrl.login_tel">
         <label for="login_tel">по номеру телефона</label>
         
-      </div>
+      </div-->
       
       <div ng-show="!$ctrl.forget && !$ctrl.remem" class="input-field">
         <input name="passwd" type="password" class="validate" ng-model="$ctrl.passwd" ng-keypress="$ctrl.enterSend($event)" ng-change="$ctrl.isCaptcha()" required>
