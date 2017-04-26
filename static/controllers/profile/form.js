@@ -30,8 +30,10 @@ var formProfileComp = function($scope, $element, $attrs, $http, $q, $window, $ti
     if($ctrl.oldPw) $ctrl.profile.pw[0]=$ctrl.oldPw;
     if(!$ctrl.profile.names) $ctrl.profile.names = [];
     $ctrl.init_names = $ctrl.profile.names.join(';');
-    $timeout(function() {$ctrl.login_tel = phoneInput.validate($ctrl.profile.login);});
-    $timeout(function() {$('ul.tabs', $($element[0])).tabs();});
+    $timeout(function() {
+      $ctrl.login_tel = phoneInput.validate($ctrl.profile.login);
+      $('ul.tabs', $($element[0])).tabs();
+    });
     $ctrl.ready = true;
   };
   
