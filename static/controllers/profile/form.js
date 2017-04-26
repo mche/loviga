@@ -18,12 +18,12 @@ var Controll = function ($scope, $q, $http, appRoutes, loadTemplateCache ) {//md
 
 };
 
-var formProfileComp = function($scope, $attrs, $http, $q, $window, $timeout, appRoutes, phoneInput) {
+var formProfileComp = function($scope, $element, $attrs, $http, $q, $window, $timeout, appRoutes, phoneInput) {
   var $ctrl = this;
   //~ $ctrl.profile.names.push('%s')", $c->auth_user->{names}
   
   
-  $ctrl.Init = function() {
+  $ctrl.$onInit = function() {
 
     $ctrl.init_login = $ctrl.profile.login;
     $ctrl.profile.pw=[];
@@ -31,6 +31,7 @@ var formProfileComp = function($scope, $attrs, $http, $q, $window, $timeout, app
     if(!$ctrl.profile.names) $ctrl.profile.names = [];
     $ctrl.init_names = $ctrl.profile.names.join(';');
     $timeout(function() {$ctrl.login_tel = phoneInput.validate($ctrl.profile.login);});
+    $timeout(function() {$('ul.tabs', $($element[0])).tabs();});
     $ctrl.ready = true;
   };
   
