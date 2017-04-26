@@ -32,7 +32,10 @@ var formProfileComp = function($scope, $element, $attrs, $http, $q, $window, $ti
     $ctrl.init_names = $ctrl.profile.names.join(';');
     $timeout(function() {
       $ctrl.login_tel = phoneInput.validate($ctrl.profile.login);
-      $('ul.tabs', $($element[0])).tabs();
+      
+      var ul = $('ul.tabs', $($element[0]));
+      ul.tabs();
+      $('li', ul).eq($ctrl.login_tel ? 1 : 0).find('a').click();
     });
     $ctrl.ready = true;
   };
