@@ -19,7 +19,7 @@ var Controll = function ($scope, loadTemplateCache, appRoutes) {//md5,
 
 };
 
-var ComponentAuth = function ($http, $element, $window,  $q, appRoutes, phoneInput) {
+var ComponentAuth = function ($http, $element, $timeout, $window,  $q, appRoutes, phoneInput) {
   var $ctrl = this;
   
   //~ console.log("form auth "+$ctrl.parentCtrl);
