@@ -1,17 +1,23 @@
-<div ng-init="$ctrl.Init()" ng-hide="$ctrl.ready" ng-include=" 'progress/load' "></div>
+<div ng-init000="$ctrl.Init()" ng-hide="$ctrl.ready" ng-include=" 'progress/load' "></div>
 
 <div ng-if="$ctrl.ready" class="card teal lighten-5">
   <div class="card-content">
     <h2 class="center">Авторизация и регистрация</h2>
     <div class="input-fields">
+      
+      <ul class="tabs tabs-transparent teal row" style="margin:0;">
+        <li class="tab col s6" ng-class000="{'active': !$ctrl.login_tel}"><a ng-click="$ctrl.ToggleLoginTel()" href="#login-email" ng-class000="{'active': !$ctrl.login_tel}">Почта</a></li>
+        <li class="tab col s6" ng-class000="{'active': $ctrl.login_tel}"><a ng-click="$ctrl.ToggleLoginTel()" href="#login-tel" ng-class000="{'active': $ctrl.login_tel}">Телефон</a></li>
+      
+      </ul>
 
-      <div ng-show="!$ctrl.login_tel" class="input-field">
+      <div id="login-email" ng-show000="!$ctrl.login_tel" class="tab input-field">
         <input name="login" type="text" class="validate000" ng-model="$ctrl.login" ng-keypress="$ctrl.enterSend($event)" required>
         <label for="login" data-error="" data-success="" class="active">Email (электонная почта)</label>
         
       </div>
       
-      <div ng-show="$ctrl.login_tel" class="input-field">
+      <div id="login-tel"  ng-show000="$ctrl.login_tel" class="tab input-field">
         <span class="tel prefix" style="">+7</span>
         <input name="login" type="tel" class="validate" ng-model="$ctrl.login" ng-keypress="$ctrl.enterSend($event)" ng-change="$ctrl.isCaptcha()" required phone-input>
         <label for="login" data-error="" data-success="" class="active">Телефон</label>

@@ -24,8 +24,9 @@ var ComponentAuth = function ($http, $window,  $q, appRoutes, phoneInput) {
   
   //~ console.log("form auth "+$ctrl.parentCtrl);
 
-  $ctrl.Init = function () {
+  $ctrl.$onInit = function () {
     $ctrl.ready = true;
+    
     
   };
   
@@ -72,6 +73,10 @@ var ComponentAuth = function ($http, $window,  $q, appRoutes, phoneInput) {
   };
   $ctrl.validLogin = function () {
     return ($ctrl.login_tel && phoneInput.validate($ctrl.login)) || (!$ctrl.login_tel && $ctrl.login && re_email.test($ctrl.login));
+  };
+  
+  $ctrl.ToggleLoginTel = function(){
+    $ctrl.login_tel = !$ctrl.login_tel;
   };
   
   $ctrl.isCaptcha = function() {

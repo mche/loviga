@@ -109,7 +109,7 @@ var formProfileComp = function($scope, $element, $attrs, $http, $q, $window, $ti
   
   $ctrl.ToggleLoginTel = function(){
     $ctrl.login_tel = !$ctrl.login_tel;
-  }
+  };
   
 };
 
