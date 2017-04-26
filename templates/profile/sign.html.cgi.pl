@@ -5,6 +5,7 @@ my $error = $c->vars('error', 'err');
 $error && div({-style=>"color:red;"}, 'Ошибка авторизации: ', $error),
 
 #~ $c->req->headers->to_hash->{'X-Content-Only'} && $c->asset('profile.form-auth.js'),
+h2({-class=>"center",}, 'Авторизация и регистрация'),
 
 div({-class=>"row", "ng-app"=>"formAuth", "ng-controller"=>"formAuthControll as ctrl",}, 
   #~ div({-class=>"col m6 s12"},
