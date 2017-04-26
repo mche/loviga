@@ -12,20 +12,21 @@
     <div class="input-fields col s12 m6">
       <div>
         <h4>Логин в сервис</h4>
-        <ul class="tabs">
-          <li class="tab"><a href="#login-email">Почта</a></li>
-          <li class="tab"><a href="#login-tel">Телефон</a></li>
+        <ul class="tabs tabs-transparent teal row" style="margin:0;">
+          <li class="tab col s6"><a href="#login-email">Почта</a></li>
+          <li class="tab col s6"><a href="#login-tel">Телефон</a></li>
         
         </ul>
         
         <div id="login-email" ng-show000="!$ctrl.login_tel" class="tab input-field">
+          <span class="tel prefix" style="">@</span>
           <input name="login" type="text" class="validate000" ng-model="$ctrl.profile.login"  required>
-          <label for="login" data-error="" data-success="" class="active">Email (электонная почта)</label>
+          <!--label for="login" data-error="" data-success="" class="active">Email (электонная почта)</label-->
         </div>
         <div id="login-tel" ng-show000="$ctrl.login_tel" class="tab input-field">
           <span class="tel prefix" style="">+7</span>
           <input name="login_t" type="tel" class="validate" ng-model="$ctrl.profile.login" required phone-input>
-          <label for="login_t" data-error="" data-success="" class="active">Телефон</label>
+          <!--label for="login_t" data-error="" data-success="" class="active">Телефон</label-->
         </div>
         <!--div class="right-align">
           <input type="checkbox" id="login_tel" ng-model="$ctrl.login_tel">
