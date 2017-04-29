@@ -149,11 +149,12 @@ var Controll = function ($scope, $timeout, $http, appRoutes) {
     return false;
   };
   
+  /*
   $ctrl.ExpandIf = function(item){
     if (!$ctrl.ready) return false;
     if (($ctrl.selectedItem && $ctrl.selectedItem === item) || $ctrl.param.expandAll) return true;
     return false;
-  };
+  };*/
   
   $ctrl.ItemImg = function (item) {
     return appRoutes.url_for('картинка категории', [item._img_url || 'default.png']);

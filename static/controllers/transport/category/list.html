@@ -15,7 +15,7 @@
   </ul>
 
   <transport-category-list
-    ng-if="$ctrl.ExpandIf()"
+    ng-if="$ctrl.selectedItem && $ctrl.selectedItem.childs && $ctrl.selectedItem.childs.length"
     data-disabled="$ctrl.disabled"
     data-data="$ctrl.selectedItem.childs"
     data-level="$ctrl.level+1"
