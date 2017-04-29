@@ -1,14 +1,16 @@
 (function () {
 'use strict';
 
-var Controll = function ($scope, $http, appRoutes, CategoryData) {
+var Controll = function ($scope, $http, appRoutes) {
   var $ctrl = this;
   //~ $ctrl.$attrs = $attrs;
   
-  $ctrl.Init = function () {
+  $ctrl.$onInit = function () {
+    if ($ctrl.level === undefined) $ctrl.level = 0;
+    $ctrl.isTopLevel = ($ctrl.level === 0);
     
-    if ($ctrl.data === undefined) {
-      CategoryData.get($ctrl.staticData, function (resp) {
+    if ($ctrl.isTopLevel) {//$ctrl.data === undefined
+      $http.get($ctrl.staticData ? appRoutes.url_for('категории транспорта') : appRoutes.url_for('данные категорий транспорта')).then(function (resp) {
         $ctrl.data = resp.data;
         $ctrl.InitData();
       });
@@ -19,6 +21,28 @@ var Controll = function ($scope, $http, appRoutes, CategoryData) {
   
   $ctrl.InitData = function() {
     
+    if(!$ctrl.param) $ctrl.param =  {};
+    if(!$ctrl.category) $ctrl.category =  {};
+    if(!$ctrl.category.selectedIdx) $ctrl.category.selectedIdx =[];
+    if(!$ctrl.category.selected) $ctrl.category.selected = {};
+    if(!$ctrl.category.finalCategory) $ctrl.category.finalCategory = {};
+
+    $ctrl.parentSelectedItem = $ctrl.category.selected;
+    
+    
+    var selectedIdx = $ctrl.category.selectedIdx[$ctrl.level];
+    if (selectedIdx !== undefined) {
+      $ctrl.selectedItem = $ctrl.data[selectedIdx]; // индекс позиция на текущем уровне
+      $ctrl.SetFinalCategory();
+      $ctrl.category.selected = $ctrl.selectedItem;
+    }
+
+    $ctrl.ready = true;
+
+  };
+  /*
+  $ctrl.InitData0000 = function() {
+    
     if ($ctrl.level === undefined) $ctrl.level = 0;
     $ctrl.selected = $ctrl.category.selectedIdx[$ctrl.level]; // индекс позиция на текущем уровне
     //~ $ctrl.ToggleSelect($ctrl.data[$ctrl.selected]);
@@ -28,8 +52,8 @@ var Controll = function ($scope, $http, appRoutes, CategoryData) {
     $ctrl.ready = true;
     
   };
-    
-  $ctrl.SetFinalCategory = function () {
+  
+  $ctrl.SetFinalCategory000 = function () {
     var final = $ctrl.selected !== undefined && $ctrl.data[$ctrl.selected] && ((!$ctrl.data[$ctrl.selected].childs) || $ctrl.data[$ctrl.selected].childs.length === 0);
     if ( final ) {// нет потомков - это финал в родительский контроллер
       $ctrl.category.finalCategory = $ctrl.data[$ctrl.selected];// item
@@ -37,10 +61,19 @@ var Controll = function ($scope, $http, appRoutes, CategoryData) {
       $ctrl.category.finalCategory = {};
     }
   
+  };*/
+  
+  $ctrl.SetFinalCategory = function () {
+      var final1 = $ctrl.selectedItem && (!$ctrl.selectedItem.childs || $ctrl.selectedItem.childs.length === 0);
+      if ( final1 ) {// нет потомков - это финал в родительский контроллер
+        $ctrl.category.finalCategory = $ctrl.selectedItem;
+      } else {
+        $ctrl.category.finalCategory = {};
+      }
   };
   
-  
-  $ctrl.ToggleSelect = function (item) {
+  /*
+  $ctrl.ToggleSelect000 = function (item) {
     if ($ctrl.disabled) return false;
     var idx = $ctrl.data.indexOf(item);
     
@@ -61,9 +94,34 @@ var Controll = function ($scope, $http, appRoutes, CategoryData) {
     $ctrl.SetFinalCategory();
     $ctrl.category.selected = $ctrl.data[$ctrl.selected];// item
     //~ $ctrl.category.current = $ctrl.data[idx];
+  };*/
+
+  $ctrl.ToggleSelect = function (item, event) {
+    if ($ctrl.disabled || item.disabled) return false;//
+    var idx = $ctrl.data.indexOf(item);
+    
+    if ($ctrl.selectedItem && $ctrl.selectedItem.id) {// сброс && $ctrl.selected == idx
+      $ctrl.selectedItem = undefined;
+      $ctrl.category.selectedIdx.splice($ctrl.level, 1000);
+      $ctrl.SetFinalCategory();// после $ctrl.selectedItem = undefined;
+      $ctrl.category.selected = $ctrl.parentSelectedItem;
+      //~ return false;
+    }
+    else {
+      // Выключил 16-01-2017
+      //~ if (item.hasOwnProperty('_count') && !item._count) return;
+      $ctrl.category.selectedIdx[$ctrl.level] = idx;
+      $ctrl.selectedItem =  item;
+      $ctrl.category.selected = item;// item
+      $ctrl.SetFinalCategory();
+    }
+    
+    //~ $ctrl.EmitEvent();// поменять сборку пути
+    
+    return true;
   };
-  
-  $ctrl.SelectedCategory = function () {
+/*
+  $ctrl.SelectedCategory000 = function () {
     var data = $ctrl.data,
       curr;
     angular.forEach($ctrl.category.selectedIdx, function(idx) {
@@ -74,10 +132,26 @@ var Controll = function ($scope, $http, appRoutes, CategoryData) {
     return curr;
   };
   
-  $ctrl.filterSelected = function(item, index, array) {
+  
+  
+  $ctrl.filterSelected000 = function(item, index, array) {
     //~ console.log("фильрация списка", item);
     if (!!item.disabled) return false;
     if ($ctrl.selected === undefined || $ctrl.data[$ctrl.selected] === item) return true;
+    return false;
+  };*/
+  
+  $ctrl.filterSelected = function(item, index, array) {
+    //~ console.log("фильрация списка", item);
+    if (!!item.disabled) return false;
+    //~ if (item['new']) console.log("new!");//return true;
+    if ($ctrl.selectedItem === undefined || $ctrl.selectedItem === item || $ctrl.selectedItem === $ctrl.newChild) return true;
+    return false;
+  };
+  
+  $ctrl.ExpandIf = function(item){
+    if (!$ctrl.ready) return false;
+    if (($ctrl.selectedItem && $ctrl.selectedItem === item) || $ctrl.param.expandAll) return true;// && $ctrl.selectedItem.childs && $ctrl.selectedItem.childs.length
     return false;
   };
   
@@ -91,14 +165,16 @@ var Controll = function ($scope, $http, appRoutes, CategoryData) {
   
 };
 
+/*
 var serviceData = function($http, appRoutes) {//$q, 
   
-  this.get = function(staticData, http_then_cb){
-    $http.get(staticData ? appRoutes.url_for('категории транспорта') : appRoutes.url_for('данные категорий транспорта'))//{"cache": true}
-    .then(http_then_cb);
+  this.get = function(staticData){
+    return $http.get(staticData ? appRoutes.url_for('категории транспорта') : appRoutes.url_for('данные категорий транспорта'));//{"cache": true}
+    //~ .then(http_then_cb);
   };
   
 };
+*/
 
 angular.module('transport.category.list', ['appRoutes'])
 //~ .config( function( $compileProvider ){
@@ -125,7 +201,7 @@ angular.module('transport.category.list', ['appRoutes'])
   controller: Controll
 })
 
-.service('CategoryData', serviceData)
+//~ .service('CategoryData', serviceData)
 
 ;
 
