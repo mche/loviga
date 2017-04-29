@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-var Controll = function ($scope, $http, appRoutes) {
+var Controll = function ($scope, $timeout, $http, appRoutes) {
   var $ctrl = this;
   //~ $ctrl.$attrs = $attrs;
   
@@ -15,7 +15,7 @@ var Controll = function ($scope, $http, appRoutes) {
         $ctrl.InitData();
       });
     } else {
-      $ctrl.InitData();
+      $timeout(function(){$ctrl.InitData();});
     }
   };
   
@@ -145,13 +145,13 @@ var Controll = function ($scope, $http, appRoutes) {
     //~ console.log("фильрация списка", item);
     if (!!item.disabled) return false;
     //~ if (item['new']) console.log("new!");//return true;
-    if ($ctrl.selectedItem === undefined || $ctrl.selectedItem === item || $ctrl.selectedItem === $ctrl.newChild) return true;
+    if ($ctrl.selectedItem === undefined || $ctrl.selectedItem === item) return true;
     return false;
   };
   
   $ctrl.ExpandIf = function(item){
     if (!$ctrl.ready) return false;
-    if (($ctrl.selectedItem && $ctrl.selectedItem === item) || $ctrl.param.expandAll) return true;// && $ctrl.selectedItem.childs && $ctrl.selectedItem.childs.length
+    if (($ctrl.selectedItem && $ctrl.selectedItem === item) || $ctrl.param.expandAll) return true;
     return false;
   };
   

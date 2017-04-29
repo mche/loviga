@@ -5,7 +5,7 @@
 <div ng-init000="$ctrl.Init()" ng-include=" 'progress/load' " ng-hide="$ctrl.ready"></div>
 
   <ul ng-if="$ctrl.ready && $ctrl.data && $ctrl.data.length" class="collection" style="display: inline-block; vertical-align:middle;">
-    <li class="collection-item waves-effect waves-teal" style="cursor: default;" ng-class="{selected: $ctrl.data[$ctrl.selected] === item}" ng-repeat="item in $ctrl.data | filter : $ctrl.filterSelected">
+    <li class="collection-item waves-effect waves-teal" style="cursor: default;" ng-class="{selected: $ctrl.selectedItem === item}" ng-repeat="item in $ctrl.data | filter : $ctrl.filterSelected">
       <h5><a ng-click="$ctrl.ToggleSelect(item)" ng-href="{{$ctrl.disabled ? null : '#'}}" class="" ng-class="{'grey-text':  item.hasOwnProperty('_count') && !item._count}" style="display:block;">
         <img ng-src="{{ $ctrl.ItemImg(item) }}" alt="" class="circle" style=" height: 45px; width000:45px; vertical-align: middle;">
         <span class="title">{{ item.title }}</span>
