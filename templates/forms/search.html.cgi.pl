@@ -12,7 +12,7 @@ return
     #~ textfield(-id=>"search", -name=>"q", -type=>"search"),
     q|<input type="search" id="search" name="q" class="autocomplete" placeholder="поиск транспорта">|,
     label({-for=>"search",}, i({-class=>"material-icons",}, 'search'), ),#'Поиск'
-    i({-class=>"material-icons close",},'close'),
+    i({-class=>"material-icons close", -style=>"height: 60px; line-height: 60px;"},'close'),
   ),
   div({-class=>"search-results",}, ''),
 #~ ),

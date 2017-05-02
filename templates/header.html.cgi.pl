@@ -70,7 +70,7 @@ div({-class=>"nav-wrapper",},
 ),
 
 div({-class=>"nav-content",},
-  $form_search =~ /\w/ ? div({-class=>"form-search hide-000",  -style=>"display: none;",}, $form_search,) : (),
+  $form_search =~ /\w/ ? div({-class=>"form-search hide-000",  -style=>"display: none; height: 60px; line-height: 60px;",}, $form_search,) : (),
 ),
 
 ),
