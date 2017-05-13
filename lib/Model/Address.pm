@@ -21,6 +21,11 @@ sub поиск {# транспорта пользователя
   $self->dbh->selectall_arrayref($self->sth('поиск'), { Slice=> {} }, $arr, $limit || 10);
 }
 
+sub поиск_город {# транспорта пользователя
+  my ($self, $re, $limit) = @_;
+  $self->dbh->selectall_arrayref($self->sth('поиск город'), { Slice=> {} }, $re, $limit || 10);
+}
+
 sub полный_адрес {
   my ($self, $uuid) = @_;
   

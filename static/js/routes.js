@@ -54,6 +54,8 @@ var routes = {
    "показ транспорта для заявки":  "/transport/show/:id/:ask",
    "позиция транспорта":   "/transport/:id",
    "поиск адреса":  "/address/search",
+   "поиск адреса/город":  "/address/search_1",
+   "поиск адреса/улица":  "/address/search_2",
    //"типы адресов":    "/address/types",
    "сохранить заявку":    "/ask/store",
    "сохранить состояние заявки":  "/ask/store/state",
