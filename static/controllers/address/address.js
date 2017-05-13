@@ -33,7 +33,7 @@ var Controll = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   };
   
   $ctrl.addrTop = function (idx, check) {// проверка тоже тут
-    $ctrl.AddrTop(idx, check);
+    lib.AddrTop(idx, check);
   };
   
   $ctrl.addrUp = function (idx, check) {// проверка тоже тут
@@ -82,7 +82,7 @@ var Controll2 = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   };
   
   $ctrl.addrTop = function (idx, check) {// проверка тоже тут
-    $ctrl.AddrTop(idx, check);
+    lib.AddrTop(idx, check);
   };
   
   $ctrl.addrUp = function (idx, check) {// проверка тоже тут
