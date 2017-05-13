@@ -38,6 +38,7 @@ sub поиск_город {
   my @data = map {
     my $format = $c->model->полный_адрес_формат($_);
     $format->{full_1} = delete $format->{full};
+    $format;
   } @{ $c->model->поиск_город(join('', map("\\m".lc.".*", @q)), 20) };# лимит 10
   
   
