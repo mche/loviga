@@ -196,6 +196,7 @@
         c/transport/item-detail.html
         c/transport/category/list.html
         c/address/address.html
+        c/address/address2.html
         address/ui-select.html
         c/rating-stars/directive.html
         c/states/list.html
@@ -467,6 +468,7 @@ c/profile/oauth.html
 #поиск/заявка
 c/transport/category/list.html
 c/address/address.html
+c/address/address2.html
 address/ui-select.html
 c/address/type.html
 c/ask/form.html
