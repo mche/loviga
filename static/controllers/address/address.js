@@ -9,7 +9,7 @@
 var moduleName='address.select';
 var module = angular.module(moduleName, ['ui.select', 'appRoutes']);
   
-var Controll = function ($scope, $attrs) {//loadTemplateCache
+var Controll = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   var $ctrl = this;
   $ctrl.$attrs = $attrs;
   
@@ -58,7 +58,7 @@ var Controll = function ($scope, $attrs) {//loadTemplateCache
 Компонент
 Раздельно город/улица
 ------------------------------------------------------------------------------*/
-var Controll2 = function ($scope, $attrs) {//loadTemplateCache
+var Controll2 = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   var $ctrl = this;
   $ctrl.$attrs = $attrs;
   
@@ -219,6 +219,9 @@ return function($ctrl, $scope) {//constructor
 /*========================================================================*/
 
 module
+
+.factory('AddressLib', Lib)
+
 .component('addressSelect', {
   templateUrl: "address/select",
   bindings: {
