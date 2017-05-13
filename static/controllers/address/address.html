@@ -1,4 +1,4 @@
-<div ng-hide="$ctrl.ready" ng-init="$ctrl.Init()" ng-include=" 'progress/load' "></div>
+<div ng-hide="$ctrl.ready" ng-init000="$ctrl.Init()" ng-include=" 'progress/load' "></div>
 
 <ul ng-if="$ctrl.ready">
 
@@ -14,7 +14,7 @@
 >
   <ui-select-match placeholder="Начните вводить адрес...">{{address.full}}</ui-select-match>
   <ui-select-choices repeat="choice in $select.choices track by $index"
-           refresh="$ctrl.searchAddress($select)"
+           refresh="$ctrl.SearchAddress($select)"
            refresh-delay="500">
     <div>{{choice.full}}</div>
   </ui-select-choices>

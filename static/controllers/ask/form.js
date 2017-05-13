@@ -85,18 +85,10 @@ var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRout
   var prevCategoryId;
   $ctrl.isCategorySelect = function () {
     
-    //~ var data = $ctrl.data.categoryTreeData,
-      //~ curr;
-    //~ angular.forEach($scope.category.selectedIdx, function(idx) {
-      //~ curr = data[idx];
-      //~ data = curr.childs;
-    //~ });
-    //~ $scope.category.current = curr;
-    
     var curr = $scope.category.selected;
     //~ console.log("CategorySelected", $scope.category);
     
-    if (!curr) return false;
+    if (!(curr && curr.id)) return false;
     if (prevCategoryId == curr.id) {
       $ctrl.addr_type = true;
       return true;

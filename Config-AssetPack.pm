@@ -3,99 +3,100 @@
     pipes => [qw(Sass Css JavaScript HTML CombineFile)],
     CombineFile => {
       url_lines =>{# только для morbo
-        'controllers/transport/list.html'=>"@@@ transport/list",
-        'controllers/ask/form.html'=>"@@@ ask/form",
-        'controllers/ask/list.html'=>"@@@ ask/list",
-        'controllers/ask/me-list.html'=>"@@@ ask/me-list",
-        'controllers/ask/item.html'=>"@@@ ask/item",
-        'controllers/ask/show-tel.html'=>"@@@ ask/show-tel",
-        'controllers/states/tel-results.html'=>"@@@ states/tel-results",
-        'controllers/states/icon.html'=>"@@@ states/icon",
-        'controllers/transport/search.html'=> "@@@ transport/search",
-        #~ 'controllers/transport/search/item-detail.html'=> "@@@ transport/search/item-detail",
-        'controllers/transport/category/list.html'=> "@@@ transport/category/list",
-        'controllers/address/address.html'=>"@@@ address.select", # адресный компонент
-        #~ 'controllers/address/ui-select.tpls.html'=> "@@@ просто разделитель",# там свои разделители
-        'controllers/address/materialize/select.tpl.html'=> "@@@ materialize/select.tpl.html",#
-        'controllers/address/materialize/match.tpl.html'=> "@@@ materialize/match.tpl.html",#
-        'controllers/address/materialize/choices.tpl.html'=> "@@@ materialize/choices.tpl.html",#
-        'controllers/address/materialize/no-choice.tpl.html'=> "@@@ materialize/no-choice.tpl.html",#
+        'c/transport/list.html'=>"@@@ transport/list",
+        'c/ask/form.html'=>"@@@ ask/form",
+        'c/ask/list.html'=>"@@@ ask/list",
+        'c/ask/me-list.html'=>"@@@ ask/me-list",
+        'c/ask/item.html'=>"@@@ ask/item",
+        'c/ask/show-tel.html'=>"@@@ ask/show-tel",
+        'c/states/tel-results.html'=>"@@@ states/tel-results",
+        'c/states/icon.html'=>"@@@ states/icon",
+        'c/transport/search.html'=> "@@@ transport/search",
+        #~ 'c/transport/search/item-detail.html'=> "@@@ transport/search/item-detail",
+        'c/transport/category/list.html'=> "@@@ transport/category/list",
+        'c/address/address.html'=>"@@@ address/select", # адресный компонент
+        'c/address/address2.html'=>"@@@ address/select2", # 
+        #~ 'c/address/ui-select.tpls.html'=> "@@@ просто разделитель",# там свои разделители
+        'c/address/materialize/select.tpl.html'=> "@@@ materialize/select.tpl.html",#
+        'c/address/materialize/match.tpl.html'=> "@@@ materialize/match.tpl.html",#
+        'c/address/materialize/choices.tpl.html'=> "@@@ materialize/choices.tpl.html",#
+        'c/address/materialize/no-choice.tpl.html'=> "@@@ materialize/no-choice.tpl.html",#
         
-        'controllers/transport/form.html'=>"@@@ transport/form",
-        'controllers/tel/tel-list.html'=>"@@@ tel.list",
-        'controllers/transport/category/list.html'=>"@@@ transport/category/list", 
-        'controllers/img-upload-list/img-upload-list.html'=>"@@@ img.upload.list",
-        'controllers/rating-stars/directive.html'=>"@@@ rating-stars-directive.html",
-        'controllers/states/list.html'=>"@@@ states/list",
-        'controllers/tel/tel-show-list.html'=>"@@@ tel/show-list",
-        'controllers/profile/form-auth.html'=>"@@@ profile/form-auth",
-        'controllers/profile/form-oauth.html'=>"@@@ profile/form-oauth",
-        'controllers/profile/form.html'=>"@@@ profile/form",
-        'controllers/profile/oauth.html' => "@@@ profile/oauth",
-        'controllers/transport/status.html' => "@@@ transport/status",
-        'controllers/address/type.html'=> "@@@ address/type",
-        'controllers/transport/search/results.html'=> "@@@ transport/search/results",
-        'controllers/transport/search/show-tel.html'=>"@@@ transport/search/show-tel",
-        'controllers/transport/item-detail.html'=>"@@@ transport/item-detail",
+        'c/transport/form.html'=>"@@@ transport/form",
+        'c/tel/tel-list.html'=>"@@@ tel.list",
+        'c/transport/category/list.html'=>"@@@ transport/category/list", 
+        'c/img-upload-list/img-upload-list.html'=>"@@@ img.upload.list",
+        'c/rating-stars/directive.html'=>"@@@ rating-stars-directive.html",
+        'c/states/list.html'=>"@@@ states/list",
+        'c/tel/tel-show-list.html'=>"@@@ tel/show-list",
+        'c/profile/form-auth.html'=>"@@@ profile/form-auth",
+        'c/profile/form-oauth.html'=>"@@@ profile/form-oauth",
+        'c/profile/form.html'=>"@@@ profile/form",
+        'c/profile/oauth.html' => "@@@ profile/oauth",
+        'c/transport/status.html' => "@@@ transport/status",
+        'c/address/type.html'=> "@@@ address/type",
+        'c/transport/search/results.html'=> "@@@ transport/search/results",
+        'c/transport/search/show-tel.html'=>"@@@ transport/search/show-tel",
+        'c/transport/item-detail.html'=>"@@@ transport/item-detail",
       },
       gzip => {min_size => 1000},
     },
     HTML => {minify_opts=>{remove_newlines => 0,}},# чета при удалении переводов строк  проблемы
     process => [# хэшреф убрал для последовательности
-      ['ui-select/address.css'=> "controllers/address/address.css",],#lib/angular-ui-select/dist/materialize.css
-      ['rating-stars.css'=> "controllers/rating-stars/style.scss",],
+      ['ui-select/address.css'=> "c/address/address.css",],#lib/angular-ui-select/dist/materialize.css
+      ['rating-stars.css'=> "c/rating-stars/style.scss",],
       ['rating-stars.js'=> qw(
-        controllers/rating-stars/module.js
-        controllers/rating-stars/controller.js
-        controllers/rating-stars/directive.js
+        c/rating-stars/module.js
+        c/rating-stars/controller.js
+        c/rating-stars/directive.js
       
       ),],
       ['address/ui-select.html'=> qw(
-        controllers/address/materialize/select.tpl.html
-        controllers/address/materialize/match.tpl.html
-        controllers/address/materialize/choices.tpl.html
-        controllers/address/materialize/no-choice.tpl.html
+        c/address/materialize/select.tpl.html
+        c/address/materialize/match.tpl.html
+        c/address/materialize/choices.tpl.html
+        c/address/materialize/no-choice.tpl.html
         ),
       ],
       #~ ['ask/list.css'=> qw(
       #~ css/fontello/fontello.css
       #~ )],
       ['ask/list.html'=> qw(
-        controllers/ask/list.html
-        controllers/transport/item-detail.html
+        c/ask/list.html
+        c/transport/item-detail.html
       
       )],
       ['ask/list.js' => qw(
-        controllers/phone-input/phone-input.js
+        c/phone-input/phone-input.js
         rating-stars.js
-        controllers/states/data.js
-        controllers/transport/item-detail.js
-        controllers/ask/list.js
+        c/states/data.js
+        c/transport/item-detail.js
+        c/ask/list.js
       ),],
       ['ask/me-list.css'=> qw(
         rating-stars.css
       ),],
       ['ask/me-list.html'=> qw(
-        controllers/ask/me-list.html
-        controllers/ask/item.html
-        controllers/ask/show-tel.html
-        controllers/rating-stars/directive.html
-        controllers/states/list.html
-        controllers/states/tel-results.html
-        controllers/tel/tel-show-list.html
-        controllers/states/icon.html
+        c/ask/me-list.html
+        c/ask/item.html
+        c/ask/show-tel.html
+        c/rating-stars/directive.html
+        c/states/list.html
+        c/states/tel-results.html
+        c/tel/tel-show-list.html
+        c/states/icon.html
       ),],
       ['ask/me-list.js'=> qw(
-        controllers/phone-input/phone-input.js
+        c/phone-input/phone-input.js
         rating-stars.js
-        controllers/states/data.js
-        controllers/states/list.js
-        controllers/states/tel-results.js
-        controllers/states/icon.js
-        controllers/tel/tel-show-list.js
-        controllers/ask/item.js
-        controllers/ask/show-tel.js
-        controllers/ask/me-list.js
+        c/states/data.js
+        c/states/list.js
+        c/states/tel-results.js
+        c/states/icon.js
+        c/tel/tel-show-list.js
+        c/ask/item.js
+        c/ask/show-tel.js
+        c/ask/me-list.js
         
       ),],
       #~ 'ask/form.js' => [ это есть transport/search.js
@@ -120,10 +121,16 @@
         lib/materialize/js/sideNav.js
 
         lib/materialize/js/forms.js
+        
+        lib/materialize/js/dropdown.js
+        lib/materialize/js/collapsible.js
+        
+        
+        
       )],
 
-                    #~ lib/materialize/js/dropdown.js
-                                  #~ lib/materialize/js/collapsible.js
+                    #~ 
+                                  #~ 
                     #~ lib/materialize/js/materialbox.js
         #~ lib/materialize/js/parallax.js
                     #~ lib/materialize/js/tooltip.js
@@ -147,13 +154,13 @@
 #lib/jquery/jquery.min.js
         lib/jquery/dist/jquery.min.js
         materialize.js
-        controllers/template-cache/script.js
+        c/template-cache/script.js
         js/jquery.autocomplete.js
         ),
         #js/searchcomplete.js
         #~ lib/materialize/js/bin/materialize.js
         #~ lib/materialize/js/sideNav.js
-        #~ "controllers/array-storage/array-storage.js",
+        #~ "c/array-storage/array-storage.js",
         # !!! внимание минификация через uglify, проблемы с точками-запятой
         # вручную убрал блоки кода по picker.date.js и picker.js (там была ошибка, дважды повтор)
         #~ "lib/ng-module/ng-module.js",# больше одного ng-app (делать ng-module и разделять ng-controller
@@ -168,12 +175,12 @@
       
       ],
       ['transport/list.html'=> qw(
-        controllers/transport/list.html
-        controllers/transport/status.html
+        c/transport/list.html
+        c/transport/status.html
       ),],
       ['transport/list.js' => qw(
-        controllers/transport/status.js
-        controllers/transport/list.js
+        c/transport/status.js
+        c/transport/list.js
       ),],
       
       ['transport/search.css'=> qw(
@@ -182,22 +189,22 @@
         
       ),],
       ['transport/search.html'=> qw(
-        controllers/transport/search.html
-        controllers/transport/search/results.html
-        controllers/transport/search/show-tel.html
-        controllers/ask/form.html
-        controllers/transport/item-detail.html
-        controllers/transport/category/list.html
-        controllers/address/address.html
+        c/transport/search.html
+        c/transport/search/results.html
+        c/transport/search/show-tel.html
+        c/ask/form.html
+        c/transport/item-detail.html
+        c/transport/category/list.html
+        c/address/address.html
         address/ui-select.html
-        controllers/rating-stars/directive.html
-        controllers/states/list.html
-        controllers/states/tel-results.html
-        controllers/states/icon.html
-        controllers/tel/tel-show-list.html
-        controllers/address/type.html
+        c/rating-stars/directive.html
+        c/states/list.html
+        c/states/tel-results.html
+        c/states/icon.html
+        c/tel/tel-show-list.html
+        c/address/type.html
         ),
-          #~ "controllers/address/ui-select.tpls.html", разделители шаблонов схлопнулись
+          #~ "c/address/ui-select.tpls.html", разделители шаблонов схлопнулись
       ],
       ['datetime.picker.js'=> grep !/^\s*#/, qw(
 #внимание-минификация-через-uglify-нет-точек-с-запятой
@@ -211,28 +218,28 @@
       
       )],
       ['transport/search.js'=> grep !/^#/, qw(
-        controllers/transport/category/list.js
-        controllers/address/select.js
-        controllers/address/address.js
-        controllers/address/type.js
-        controllers/phone-input/phone-input.js
+        c/transport/category/list.js
+        c/address/select.js
+        c/address/address.js
+        c/address/type.js
+        c/phone-input/phone-input.js
         js/util/detectmobilebrowser.js
         rating-stars.js
-        controllers/states/data.js
-        controllers/states/list.js
-        controllers/states/tel-results.js
-        controllers/states/icon.js
-        controllers/tel/tel-show-list.js
-        controllers/transport/item-detail.js
-#controllers/ask/services.js
-        controllers/transport/search/results.js
-        controllers/transport/search/show-tel.js
-        controllers/ask/form.js
-        controllers/transport/search.js
+        c/states/data.js
+        c/states/list.js
+        c/states/tel-results.js
+        c/states/icon.js
+        c/tel/tel-show-list.js
+        c/transport/item-detail.js
+#c/ask/services.js
+        c/transport/search/results.js
+        c/transport/search/show-tel.js
+        c/ask/form.js
+        c/transport/search.js
         datetime.picker.js
         lib/angular-sanitize/angular-sanitize.js
         ),
-        #lib/angular-ui-select/dist/select.js переместил в controllers/address/
+        #lib/angular-ui-select/dist/select.js переместил в c/address/
         #~ "lib/pickadate/lib/picker.js",
         #~ "lib/pickadate/lib/picker.date.js",
         #~ "lib/jquery.scrollTo/jquery.scrollTo.js",
@@ -243,56 +250,56 @@
       
       ),],
       ['transport/form.html'=> qw(
-        controllers/transport/form.html
-        controllers/tel/tel-list.html
-        controllers/transport/category/list.html
-        controllers/img-upload-list/img-upload-list.html
-        controllers/address/address.html
+        c/transport/form.html
+        c/tel/tel-list.html
+        c/transport/category/list.html
+        c/img-upload-list/img-upload-list.html
+        c/address/address.html
         address/ui-select.html
-        controllers/transport/status.html
-        controllers/address/type.html
+        c/transport/status.html
+        c/address/type.html
         ),
       ],
       ['transport/form.js' => qw(
         lib/ng-file-upload/ng-file-upload-all.min.js
-        controllers/img-upload-list/img-upload-list.js
-        controllers/transport/category/list.js
+        c/img-upload-list/img-upload-list.js
+        c/transport/category/list.js
         js/util/array-move.js
-        controllers/address/select.js
-        controllers/address/address.js
-        controllers/address/type.js
-        controllers/phone-input/phone-input.js
-        controllers/tel/tel-list.js
-        controllers/transport/status.js
-        controllers/transport/form.js
+        c/address/select.js
+        c/address/address.js
+        c/address/type.js
+        c/phone-input/phone-input.js
+        c/tel/tel-list.js
+        c/transport/status.js
+        c/transport/form.js
         ),
-        #lib/angular-ui-select/dist/select.js переместил в controllers/address/
+        #lib/angular-ui-select/dist/select.js переместил в c/address/
       ],
       
       ['profile/form.html'=>qw(
-      controllers/profile/form.html
-      controllers/profile/oauth.html
+      c/profile/form.html
+      c/profile/oauth.html
       )],
       ['profile/form.js' => grep !/^#/, qw(
         #~lib/angular-md5/angular-md5.js
         lib/jquery-md5/jquery.md5.js
-        controllers/phone-input/phone-input.js
-        controllers/profile/lib.js
-        controllers/profile/form.js
+        c/phone-input/phone-input.js
+        c/profile/lib.js
+        c/profile/form.js
         ),
       ],
       
       ['profile/form-auth.html'=>qw(
-      controllers/profile/form-auth.html
-      controllers/profile/form-oauth.html
+      c/profile/form-auth.html
+      c/profile/form-oauth.html
       )],
       ['profile/form-auth.js' => 
         #~ "lib/angular-md5/angular-md5.js",
         qw(
         lib/jquery-md5/jquery.md5.js
-        controllers/phone-input/phone-input.js
-        controllers/profile/lib.js
-        controllers/profile/form-auth.js
+        c/phone-input/phone-input.js
+        c/profile/lib.js
+        c/profile/form-auth.js
         
         ),
       ],
@@ -313,8 +320,8 @@
         #~ "lib/pickadate/lib/themes/default.date.css",
       ],#
       
-      ['top-search.json'=>qw(controllers/transport/category/search.json)],
-      ['transport/category/tree.json'=>qw(controllers/transport/category/tree.json)],
+      ['top-search.json'=>qw(c/transport/category/search.json)],
+      ['transport/category/tree.json'=>qw(c/transport/category/tree.json)],
 
 # приложение
 ['ng-cordova-oauth.js'=>qw(
@@ -350,7 +357,7 @@ android/lib/onsenui/js/angular-onsenui.js
 android/lib/ngCordova/dist/ng-cordova.js
 ng-cordova-oauth.js
 
-controllers/template-cache/script.js
+c/template-cache/script.js
 ###шаблоны_прогреса_свои_
 js/user.js
 js/debug.js
@@ -363,50 +370,50 @@ android/app.js
 
 #profile/form-auth.js
 lib/jquery-md5/jquery.md5.js
-controllers/phone-input/phone-input.js
-controllers/profile/lib.js
-controllers/profile/form-auth.js
-controllers/profile/form.js
+c/phone-input/phone-input.js
+c/profile/lib.js
+c/profile/form-auth.js
+c/profile/form.js
 
 #поиск/заявка
-controllers/transport/category/list.js
-controllers/address/select.js
-controllers/address/address.js
-controllers/address/type.js
+c/transport/category/list.js
+c/address/select.js
+c/address/address.js
+c/address/type.js
 datetime.picker.js
 #
 #библиотека-по-поиску
-controllers/transport/search.js
-controllers/states/data.js
-controllers/states/list.js
-controllers/states/tel-results.js
-controllers/states/icon.js
-controllers/tel/tel-show-list.js
-controllers/transport/item-detail.js
-controllers/transport/search/results.js
-controllers/transport/search/show-tel.js
-controllers/ask/form.js
+c/transport/search.js
+c/states/data.js
+c/states/list.js
+c/states/tel-results.js
+c/states/icon.js
+c/tel/tel-show-list.js
+c/transport/item-detail.js
+c/transport/search/results.js
+c/transport/search/show-tel.js
+c/ask/form.js
 
 #заявки/список
 rating-stars.js
-controllers/ask/list.js
+c/ask/list.js
 
 #трансп/форм
 lib/ng-file-upload/ng-file-upload-all.min.js
-controllers/img-upload-list/img-upload-list.js
-controllers/tel/tel-list.js
-controllers/transport/status.js
+c/img-upload-list/img-upload-list.js
+c/tel/tel-list.js
+c/transport/status.js
 js/util/array-move.js
-controllers/transport/form.js
+c/transport/form.js
 
 #трансп/список
-controllers/transport/status.js
-controllers/transport/list.js
+c/transport/status.js
+c/transport/list.js
 
 #спрос/список
-controllers/ask/item.js
-controllers/ask/me-list.js
-controllers/ask/show-tel.js
+c/ask/item.js
+c/ask/me-list.js
+c/ask/show-tel.js
 
 )],#android/main.js
 
@@ -452,43 +459,43 @@ android/templates/ask/item.html
 #cordova-apps/ionic-lovigazel/www/templates/search.html
 
 
-controllers/profile/form-auth.html
-controllers/profile/form-oauth.html
-controllers/profile/form.html
-controllers/profile/oauth.html
+c/profile/form-auth.html
+c/profile/form-oauth.html
+c/profile/form.html
+c/profile/oauth.html
 
 #поиск/заявка
-controllers/transport/category/list.html
-controllers/address/address.html
+c/transport/category/list.html
+c/address/address.html
 address/ui-select.html
-controllers/address/type.html
-controllers/ask/form.html
-controllers/states/list.html
-controllers/tel/tel-show-list.html
-controllers/transport/item-detail.html
-controllers/transport/search/results.html
-controllers/transport/search/show-tel.html
-controllers/rating-stars/directive.html
+c/address/type.html
+c/ask/form.html
+c/states/list.html
+c/tel/tel-show-list.html
+c/transport/item-detail.html
+c/transport/search/results.html
+c/transport/search/show-tel.html
+c/rating-stars/directive.html
 
 #заявки/список
-controllers/ask/list.html
+c/ask/list.html
 
 #трансп/форма
-controllers/tel/tel-list.html
-controllers/img-upload-list/img-upload-list.html
-controllers/transport/status.html
-controllers/transport/form.html
+c/tel/tel-list.html
+c/img-upload-list/img-upload-list.html
+c/transport/status.html
+c/transport/form.html
 
 #трансп/список
-controllers/transport/list.html
-controllers/transport/status.html
+c/transport/list.html
+c/transport/status.html
 
 #спрос/список
-controllers/ask/me-list.html
-controllers/ask/item.html
-controllers/ask/show-tel.html
-controllers/states/tel-results.html
-controllers/states/icon.html
+c/ask/me-list.html
+c/ask/item.html
+c/ask/show-tel.html
+c/states/tel-results.html
+c/states/icon.html
 
 )],
     ],
