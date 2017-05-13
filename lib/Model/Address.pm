@@ -58,6 +58,13 @@ order by array_to_string("AOLEVEL", '')::int, weight desc, array_to_string("FORM
 limit ?
 ;
 
+@@ поиск город?cached=1
+select *
+from fias.search_address_1(?::text) -- '{\\mкрасн.*\\mяр.*}'
+order by array_to_string("AOLEVEL", '')::int, array_to_string("FORMALNAME", '')
+limit ?
+;
+
 @@ полный адрес
 select * from fias.aoguid_parents_array(?::uuid)
 ;
