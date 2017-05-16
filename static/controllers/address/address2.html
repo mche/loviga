@@ -12,6 +12,7 @@
       title="Укажите город"
       append-to-body="false"
       ng-disabled="$ctrl.disabled"
+      address-part="1"
    >
      <ui-select-match placeholder="Начните вводить город...">{{address.full_1 || address.full}}</ui-select-match>
      <ui-select-choices repeat="choice in $select.choices track by $index"
@@ -29,6 +30,7 @@
       title="Укажите улицу"
       append-to-body="false"
       ng-disabled="$ctrl.disabled || !address.full_1"
+      address-part="2"
    >
      <ui-select-match placeholder="Начните вводить улицу...">{{address.full_2}}</ui-select-match>
      <ui-select-choices repeat="choice in $select.choices track by $index"
