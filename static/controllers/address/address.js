@@ -21,6 +21,7 @@ var Controll = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   
   
   $ctrl.SearchAddress = function(select) {
+    console.log("SearchAddress ", select);
     lib.SearchAddress(select, 'поиск адреса');
   };
   
