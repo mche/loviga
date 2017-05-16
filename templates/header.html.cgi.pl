@@ -44,7 +44,7 @@ div({-class=>"nav-wrapper",},
        span({-class=>"notifications-icon overlay grow infinite yellow darken-2 white-text ".($has_new_ask || 'hide'), -style=>"right: 10px; top: 10px;"}, ''),#span({-class=>"notifications-icon-count"},'!')
        #~ span({-class=>"notification-inner",},    )
       #~ ),
-      i({-class=>"material-icons teal lighten-1 black-text",},'menu'),#
+      i({-class=>"material-icons yellow darken-1 black-text",},'menu'),#
       
       
       
