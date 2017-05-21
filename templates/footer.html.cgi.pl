@@ -13,7 +13,7 @@ div({-class=>"container",}, # $c->content('footer000') ||
     ),
     div({-class=>"col l5 m5 s12",},
       a({-class=>"btn black", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel",  -target=>"_blank",  -title=>"Загрузить андроид-приложение",},
-        img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 3rem;vertical-align: middle;", -alt=>"android google play"}, ''),
+        img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 2rem;vertical-align: middle;", -alt=>"android google play"}, ''),
         span({}, 'Загрузить с Google Play',),
         
       ),
