@@ -10,7 +10,7 @@ ul({-class=>"right",},
   
   li({}, a({-class=>"btn-large", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel", -title=>"Загрузить андроид-приложение с Google Play",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
-    img({-src="/i/logo/google-play.png", -class=>"", -style=>"vertical-align: middle;"}, ''),
+    img({-src=>"/i/logo/google-play.png", -class=>"", -style=>"vertical-align: middle;"}, ''),
     span({}, 'Загрузить с Google Play',),
     
   ),),
