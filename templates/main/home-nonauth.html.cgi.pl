@@ -1,6 +1,6 @@
 
 
-div({-class="center",},
+div({-class=>"center",},
   a({-class=>"btn-large", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
     i({-class=>"icon-login-1", -style=>"display: inline; vertical-align: middle;"}, ''),
