@@ -1,7 +1,7 @@
 '<footer class="page-footer">',
 div({-class=>"container",}, $c->content('footer')
  ||
-  div({-class=>"row",
+  div({-class=>"row",},
     #~ div({-class=>"col l4 s12",},
               #~ <h5 class="white-text">J проекту</h5>
               #~ <p class="grey-text text-lighten-4"></p>
