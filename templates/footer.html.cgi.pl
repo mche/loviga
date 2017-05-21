@@ -16,7 +16,7 @@ div({-class=>"container",}, $c->content('footer')
         
       ),
     ),
-  ),
+  ).
   div({-class=>"footer-copyright",},
     div({-class=>"",}, "© 2017 LoviGazel Inc. Права защищены."),
   ),
