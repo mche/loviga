@@ -62,7 +62,7 @@ $(document).ready(function () {
           .replace(/&lt;(\/?strong)&gt;/g, '<$1>');
         ret.push('<span class="breadcrumb teal-text">' + val + '</span>');
       });
-      return '<img alt="пиктограмма транспорта" class="circle000" style=" width: 45px; vertical-align: middle;" src="/i/transport/category/'+ (suggestion.data.img || '8cb2d903fe2a5d9d0d8a953ba3df94e1.png') +'">'+'<span>'+ret.join('')+'</span>';
+      return '<img alt="пиктограмма транспорта" class="circle" style=" width: 45px; vertical-align: middle;" src="/i/transport/category/'+ (suggestion.data.img || '8cb2d903fe2a5d9d0d8a953ba3df94e1.png') +'">'+'<span>'+ret.join('')+'</span>';
     },
     onSelect: function (suggestion) {
         //~ console.log('You selected: ', suggestion);
