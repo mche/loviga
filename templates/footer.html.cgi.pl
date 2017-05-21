@@ -1,12 +1,8 @@
 footer({-class=>"page-footer teal darken-2"},
 div({-class=>"container",}, # $c->content('footer000') ||
   div({-class=>"row",},
-    #~ div({-class=>"col l4 s12",},
-              #~ <h5 class="white-text">J проекту</h5>
-              #~ <p class="grey-text text-lighten-4"></p>
 
-    #~ ),
-    div({-class=>"col s12",},
+    div({-class=>"col l8 m8 s12",},
       h4({-class=>"white-text",},"Дружите с нами в социальных сетях"),
       ul({-class=>"",},
         li({-class=>"inline",}, a({-href=>"https://vk.com/lovigazel", -target=>"_blank", -class=>"btn000 white-text waves-effect waves-light",}, img({-src=>"/i/logo/vkontakte.png", -class=>"circle white", -style=>"height: 40px; vertical-align: middle;", -alt=>"vkontakte logo"}), span({-class=>"",}, "ontakte")),),
@@ -14,6 +10,14 @@ div({-class=>"container",}, # $c->content('footer000') ||
         li({-class=>"inline",}, a({-href=>"https://ok.ru/lovigazel", -target=>"_blank", -class=>"btn000 white-text waves-effect waves-light",}, img({-src=>"/i/logo/odnoklassniki.png", -class=>"circle white", -style=>"height: 40px; vertical-align: middle;", -alt=>"odnoklassniki logo"}), span({-class=>"",}, "лассники")),),
         
       ),
+    ),
+    div({-class=>"col l4 s12",},
+      a({-class=>"btn-large black", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel",  -target=>"_blank",  -title=>"Загрузить андроид-приложение",},
+        img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 3rem;vertical-align: middle;", -alt=>"android google play"}, ''),
+        span({}, 'Загрузить с Google Play',),
+        
+      ),
+
     ),
   ).
   div({-class=>"footer-copyright",},
