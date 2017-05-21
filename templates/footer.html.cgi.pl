@@ -1,5 +1,5 @@
 '<footer class="page-footer">',
-div({-class=>"container",}, $c->content('footer')
+div({-class=>"container",}, $c->content('footer000')
  ||
   div({-class=>"row",},
     #~ div({-class=>"col l4 s12",},
