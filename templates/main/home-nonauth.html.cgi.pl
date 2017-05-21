@@ -1,6 +1,6 @@
 
 
-div({},
+div({-class="center",},
   a({-class=>"btn-large", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
     i({-class=>"icon-login-1", -style=>"display: inline; vertical-align: middle;"}, ''),
@@ -19,13 +19,13 @@ h2("Как это работает"),
 
 table({},
   thead({},
-    tr({},
+    $cgi->tr({},
       th({}, "Владелец техники, исполнитель транспортных услуг"),
       th({}, "Заказчик техники, потребитель транспортных услуг"),
     ),
   ),
   tbody({},
-    tr({},
+    $cgi->tr({},
       td({},
         ol({},
           li({}, "У вас есть транспорт или спецтехника и Вы хотите предложить услугу."),
