@@ -11,7 +11,7 @@ $c->layout('main', handler=>'ep', 'title-only'=>'Начало');
 div({}, $c->include('forms/search',)),
 
 $uid 
-  ? && ul(
+  ? ul(
   
   $has_new_ask
   ? li({-class=>"inline",},
