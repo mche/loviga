@@ -51,7 +51,7 @@ div({-class=>"nav-wrapper",},
     ),
     
   )
-    : $c->match->endpoint && $c->match->endpoint->name ne 'profile'
+    : $c->match->endpoint && !($c->match->endpoint->name ~~ ['profile', 'home'])
       ? li({},
           a({-class=>"btn-large000 black-text000 teal000 lighten-1000", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},#btn-large000 black-text000 teal000 lighten-1000
             #~ i({-class=>"material-icons",}, 'exit_to_app'),
