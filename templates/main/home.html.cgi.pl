@@ -36,6 +36,6 @@ $uid
   ),
   
 )
-  : $c->include('main/home-nonauth',), 
+  : $c->include('main/home-nonauth', handler=>'cgi.pl'), 
 
 
