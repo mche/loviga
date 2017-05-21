@@ -8,7 +8,7 @@ my $has_new_ask = $c->stash('есть новые заявки') // $c->app->mode
   if $uid;
 $c->layout('main', handler=>'ep', 'title-only'=>'Начало');
 
-div({}, $c->include('forms/search', handler=>'cgi.pl',)),
+#~ div({}, $c->include('forms/search', handler=>'cgi.pl',)),
 
 
 $uid 
