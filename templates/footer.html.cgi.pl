@@ -1,4 +1,4 @@
-'<footer class="page-footer">',
+footer({-class=>"page-footer teal darken-2"},
 div({-class=>"container",}, # $c->content('footer000') ||
   div({-class=>"row",},
     #~ div({-class=>"col l4 s12",},
@@ -21,4 +21,4 @@ div({-class=>"container",}, # $c->content('footer000') ||
   ),
 ),
 
-'</footer>',
+),
