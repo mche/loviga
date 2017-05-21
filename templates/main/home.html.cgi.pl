@@ -8,11 +8,10 @@ my $has_new_ask = $c->stash('есть новые заявки') // $c->app->mode
   if $uid;
 $c->layout('main', handler=>'ep', 'title-only'=>'Начало');
 
-h1('Добро пожаловать'),
-p({}, "Сервис ..." x 100),
+div({}, $c->include('forms/search',)),
 
-($c->is_user_authenticated || ()) 
-&& ul(
+$uid 
+  ? && ul(
   
   $has_new_ask
   ? li({-class=>"inline",},
@@ -36,5 +35,7 @@ p({}, "Сервис ..." x 100),
     ),
   ),
   
-),
+)
+  : $c->include('main/home-nonauth',), 
+
 

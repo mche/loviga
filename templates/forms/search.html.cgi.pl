@@ -10,7 +10,7 @@ return
   div({-class=>"input-field",},# col s6 m6 l6
     #~ i({-class=>"material-icons prefix", -style=>"bottom:0;"}, 'search'),
     #~ textfield(-id=>"search", -name=>"q", -type=>"search"),
-    q|<input type="search" id="search" name="q" class="autocomplete" placeholder="поиск транспорта">|,
+    q|<input type="search" id="search" name="q" class="autocomplete" placeholder="найти/поиск транспорта">|,
     label({-for=>"search",}, i({-class=>"material-icons",}, 'search'), ),#'Поиск'
     i({-class=>"material-icons close", -style=>"height: 60px; line-height: 60px;"},'close'),
   ),
