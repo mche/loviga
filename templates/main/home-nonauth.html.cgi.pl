@@ -1,16 +1,16 @@
 
 
-ul({-class=>"right",},
-  li({}, a({-class=>"btn-large", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},
+ul({-class=>"right collection", -style=>"border: none;",},
+  li({-class=>"collection-item right-align",}, a({-class=>"btn-large", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
     i({-class=>"icon-login-1", -style=>"display: inline; vertical-align: middle;"}, ''),
     span({}, 'Вход / Регистрация',),
     
   ),),
   
-  li({}, a({-class=>"btn-large", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel", -title=>"Загрузить андроид-приложение с Google Play",},
+  li({-class=>"collection-item right-align",}, a({-class=>"btn-large black", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel", -title=>"Загрузить андроид-приложение",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
-    img({-src=>"/i/logo/google-play.png", -class=>"", -style=>"vertical-align: middle;"}, ''),
+    img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 3.5rem;vertical-align: middle;"}, ''),
     span({}, 'Загрузить с Google Play',),
     
   ),),
