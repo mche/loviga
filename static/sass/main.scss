@@ -22,6 +22,15 @@ $primary-color-background1: color("teal", "darken-2") !default;
 @import "autocomplete";
 @import "icon";
 
+body {
+    display: flex;
+    min-height: 99vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
 
 h1, h2, h3, h4, h5, h6 {
   //@extend .teal-text.text-darken-4;
