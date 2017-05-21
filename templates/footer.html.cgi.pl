@@ -1,6 +1,5 @@
 '<footer class="page-footer">',
-div({-class=>"container",}, $c->content('footer000')
- ||
+div({-class=>"container",}, # $c->content('footer000') ||
   div({-class=>"row",},
     #~ div({-class=>"col l4 s12",},
               #~ <h5 class="white-text">J проекту</h5>
