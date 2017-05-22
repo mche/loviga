@@ -5,7 +5,7 @@ h1("Добро пожаловать на сервис грузоперевозо
 div({-class=>"row",},
 
 div({-class=>"col s6",},
-  img({-src=>"/i/collage1.png", -class=>"yellow", -style=>"", -alt=>"замечательный коллаж"}, ''),
+  img({-src=>"/i/collage1.png", -class=>"yellow", -style=>"width:100%;", -alt=>"замечательный коллаж"}, ''),
 
 ),
 
