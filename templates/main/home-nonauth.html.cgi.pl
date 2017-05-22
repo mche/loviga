@@ -4,12 +4,12 @@ h1("Добро пожаловать на сервис грузоперевозо
 
 div({-class=>"row",},
 
-div({-class=>"col s6",},
+div({-class=>"col s12 m6",},
   img({-src=>"/i/collage1.png", -class=>"yellow", -style=>"width:100%;", -alt=>"замечательный коллаж"}, ''),
 
 ),
 
-ul({-class=>"col s6 collection", -style=>"border: none;",},
+ul({-class=>"col s12 m6 collection", -style=>"border: none;",},
   li({-class=>"collection-item right-align", -style=>"border: none;",}, a({-class=>"btn-large", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
     i({-class=>"icon-login-1", -style=>"display: inline; vertical-align: middle;"}, ''),
