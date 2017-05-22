@@ -1,6 +1,15 @@
 
 
-ul({-class=>"right collection", -style=>"border: none;",},
+h1("Добро пожаловать на сервис грузоперевозок “Лови Газель”!"),
+
+div({-class=>"row",},
+
+div({-class=>"col s8",},
+  img({-src=>"/i/collage.png", -class=>"yellow", -style=>"", -alt=>"замечательный коллаж"}, ''),
+
+),
+
+ul({-class=>"col s4 collection", -style=>"border: none;",},
   li({-class=>"collection-item right-align", -style=>"border: none;",}, a({-class=>"btn-large", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
     i({-class=>"icon-login-1", -style=>"display: inline; vertical-align: middle;"}, ''),
@@ -16,7 +25,7 @@ ul({-class=>"right collection", -style=>"border: none;",},
   ),),
 ),
 
-h1("Добро пожаловать на сервис грузоперевозок “Лови Газель”!"),
+),
 
 p("Сервис “Лови Газель” представляет собой систему размещения и поиска предложений и спроса услуг по грузоперевозке и оказания услуг по работе специальной техники. Система состоит из сайта и Android приложения Google Play."),
 
