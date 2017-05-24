@@ -33,6 +33,7 @@ var routes = {
   'yandex profile avatar': "https://avatars.mds.yandex.net/get-yapic/:default_avatar_id/islands-50",
   'logout':"/logout",
   
+  "авторизация": '/profile',
   "поиск транспорта":   "/search",
    "обычная авторизация/регистрация":   "/profile/sign",
    "профиль сохранить": "/profile",

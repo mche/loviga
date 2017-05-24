@@ -188,7 +188,7 @@ var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $windo
   
   $ctrl.ToLogin = function () {
     if ($ctrl.toLoginCallback) return $ctrl.toLoginCallback();
-    $window.location.href = appRoutes.url_for('profile');
+    $window.location.href = appRoutes.url_for('авторизация');
     
   };
   
