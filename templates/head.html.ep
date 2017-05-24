@@ -1,5 +1,8 @@
 <head>
-<title><%= (stash('title-only') ||  stash('title') || stash('header-title')) . ' - ' .  config('Проект') %></title>
+%# не путать 'head-title' и 'header-title' второй в body
+<title><%= (stash('head-title') ||  stash('title') || stash('header-title')) . ' - ' .  config('Проект') %></title>
+<meta name="description" content="<%= stash('meta-description') || config('Проект') %>" />
+<meta name="keywords" content="<%= stash('meta-keywords') || '' %>" />
 
 %# взял с http://www.freefavicon.com/freefavicons/objects/iconinfo/truck-152-237857.html
 %# <link rel="icon" type="image/x-icon" href="/i/favicon.ico">
