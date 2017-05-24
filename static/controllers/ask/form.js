@@ -7,7 +7,7 @@ try {
 
 var module = angular.module(moduleName, ['appRoutes', 'AppTplCache', 'transport.category.list', 'address.select', 'AddressType',  'phone.input', 'User', 'ngSanitize', 'States']); //
 
-var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRoutes, User, AskFormData) {//
+var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $window, appRoutes, User, AskFormData) {//
   var $ctrl = this;
   $scope.category = {"selectedIdx": [], "finalCategory": null, selected: null};//, current: {}
   $scope.User = User; // $('body').attr('data-my-auth-id');
@@ -19,8 +19,8 @@ var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRout
     //~ $ctrl.parentShowSearchResults({res: res === undefined ? 0 : res});
   };
   
-  var SetDate = function (context) {$scope.date[0] = $('input[name="date"]').val(); $ctrl.btnSearchActive();};
-  var SetTime = function(context) {$scope.date[1] = $('input[name="time"]').val(); $ctrl.btnSearchActive();};
+  var SetDate = function (context) {$scope.date[0] = $('input[name="date"]', $($element[0])).val(); $ctrl.btnSearchActive();};
+  var SetTime = function(context) {$scope.date[1] = $('input[name="time"]', $($element[0])).val(); $ctrl.btnSearchActive();};
   
   $ctrl.Init = function () {
     
@@ -62,13 +62,13 @@ var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRout
     
     $timeout(function() {
 
-      $('.datepicker').pickadate({// все настройки в файле русификации ru_RU.js
+      $('.datepicker', $($element[0])).pickadate({// все настройки в файле русификации ru_RU.js
         clear: '',
         onClose: SetDate,
         min: $ctrl.data.id ? undefined : new Date()
         //~ editable: $ctrl.data.transport ? false : true
       });//{closeOnSelect: true,}
-      $('.timepicker').pickatime({
+      $('.timepicker', $($element[0])).pickatime({
         onClose: SetTime
         //~ editable: $ctrl.data.transport ? false : true
       });
@@ -112,15 +112,15 @@ var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRout
     last_check4search = check.join(':');
     
     if (check[0] == 4) return $ctrl.data;
-    return undefined;
+    return false;
   };
   
   //~ $ctrl.addr_type = [];
-  $ctrl.btnSearchActive = function () {
+  $ctrl.btnSearchActive = function (data) {
     if ($ctrl.cancelerHttp) return false;
     if ($ctrl.data.transport) return false;
     
-    var data = $ctrl.CollectData();
+    if (data === undefined) data = $ctrl.CollectData();
     if (!data) {//($ctrl.data.hasOwnProperty('_addr_type_count') && 
       //~ last_check4search = undefined;
       //~ delete $ctrl._check4search;
@@ -171,17 +171,17 @@ var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRout
   };
   
   $ctrl.ScrollToSave = function () {
-    if ( $ctrl.param.searchResults !== 0 && !$ctrl.data.id ) return false;
+    //~ if ( $ctrl.param.searchResults !== 0 && !$ctrl.data.id ) return false;
     
-    if ($ctrl.param.scrollToSave) {
-      $timeout(function () {
-        var card = $('#notfound-card');
-        $('html, body').animate({scrollTop: card.offset().top}, 1000);
-        card.focus();
-        delete $ctrl.param.scrollToSave;
-      });
-    }
-    return true;
+    //~ if ($ctrl.param.scrollToSave) {
+    $timeout(function () {
+      var card = $('#notfound-card', $($element[0]));
+      $('html, body').animate({scrollTop: card.offset().top}, 1000);
+      card.focus();
+      delete $ctrl.param.scrollToSave;
+    });
+    //~ }
+    //~ return true;
   };
   
 
@@ -189,6 +189,13 @@ var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRout
   $ctrl.ToLogin = function () {
     if ($ctrl.toLoginCallback) return $ctrl.toLoginCallback();
     $window.location.href = appRoutes.url_for('profile');
+    
+  };
+  
+  $ctrl.ShowNotFoundCard = function(){
+    var data = $ctrl.CollectData();
+    if (!data) return false;
+    return !$ctrl.btnSearchActive(data);
     
   };
   
@@ -215,7 +222,7 @@ var Component = function  ($scope, $attrs, $http, $q, $timeout, $window, appRout
     var data = $ctrl.CollectData();
     //~ console.log("Сохранить заявку: "+angular.toJson(data));
     //~ return;
-    //~ if (!data) return;
+    if (!data) return;
     $scope.saveAskErr=undefined;
     
     if ($ctrl.cancelerHttpSaveAsk) $ctrl.cancelerHttpSaveAsk.resolve();
