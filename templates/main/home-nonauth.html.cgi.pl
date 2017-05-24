@@ -17,7 +17,7 @@ ul({-class=>"col s12 m6 collection", -style=>"border: none;",},
     
   ),),
   
-  li({-class=>"collection-item right-align",}, a({-class=>"btn-large black", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel",  -target=>"_blank",  -title=>"Загрузить андроид-приложение",},
+  li({-class=>"collection-item right-align",}, a({-class=>"btn-large fs8 black", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel",  -target=>"_blank",  -title=>"Загрузить андроид-приложение",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
     img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 3rem;vertical-align: middle;", -alt=>"android google play"}, ''),
     span({}, 'Загрузить Android-приложение',),
