@@ -21,7 +21,7 @@ var Controll = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   
   
   $ctrl.SearchAddress = function(select) {
-    console.log("SearchAddress ", select);
+    //~ console.log("SearchAddress ", select);
     lib.SearchAddress(select, 'поиск адреса');
   };
   
@@ -145,7 +145,7 @@ addr_http_then_cb: function($ctrl, $scope) {return function (resp){// self lib m
   
 SearchAddress: function($ctrl, $scope, select, url_for) {
   var text = select.search.toLowerCase();
-  console.log("SearchAddress", text);
+  //~ console.log("SearchAddress", text);
 
   if (text.length === 0) select.choices = [];
   var data = methods.parseTokens(text);

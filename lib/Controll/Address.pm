@@ -8,7 +8,7 @@ has model => sub {shift->app->models->{'Address'}};
 sub search {
   my $c=shift;
   
-  my @q = grep /[\dа-я-]/, map s/[^\s\dа-я-"]+//gr, map s/\s+/ /gr,$c->vars('q');
+  my @q = grep /[\dа-я-]/i, map s/[^\s\dа-я-"]+//gir, map s/\s+/ /gr,$c->vars('q');
   
   $c->render(json=>[])
     unless @q && length $q[0] > 2;
