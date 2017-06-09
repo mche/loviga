@@ -144,14 +144,13 @@ addr_http_then_cb: function($ctrl, $scope) {return function (resp){// self lib m
 };},
   
 SearchAddress: function($ctrl, $scope, select, url_for) {
-  var text = select.search;
-  //~ $ctrl.data = [];
+  var text = select.search.toLowerCase();
+
   if (text.length === 0) select.choices = [];
   var data = methods.parseTokens(text);
 
 
-  if (!data[0] || data[0].length < 3) return;// || !/\w/.test(text)
-  //~ if (regExp.latin.test(data[0])) return;
+  if (!data[0] || data[0].length < 3) return;
   
   var query = {q: data};
   if ($ctrl.cancelerHttp) $ctrl.cancelerHttp.resolve();
