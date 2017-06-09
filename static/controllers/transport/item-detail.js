@@ -21,7 +21,7 @@ var Component = function  ($scope,$window, $timeout, User, appRoutes) {//, $http
   
   $ctrl.Login = function() {
     if ($ctrl.toLoginCallback) return $ctrl.toLoginCallback();
-    $window.location.href = appRoutes.url_for('profile');
+    $window.location.href = appRoutes.url_for('авторизация');
   };
   
   $ctrl.ImgUrl = function(img) {
