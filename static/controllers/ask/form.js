@@ -9,20 +9,10 @@ var module = angular.module(moduleName, ['appRoutes', 'AppTplCache', 'transport.
 
 var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $window, appRoutes, User, AskFormData) {//
   var $ctrl = this;
-  $scope.category = {"selectedIdx": [], "finalCategory": null, selected: null};//, current: {}
-  $scope.User = User; // $('body').attr('data-my-auth-id');
   
-  $ctrl.SetSearchResults = function (res) {
-    //~ console.log("SetSearchResults: "+res);
-    $ctrl.param.searchResults = res;
-    if ($ctrl.onSetSearchResultsCallback) $ctrl.onSetSearchResultsCallback (res);
-    //~ $ctrl.parentShowSearchResults({res: res === undefined ? 0 : res});
-  };
-  
-  var SetDate = function (context) {$scope.date[0] = $('input[name="date"]', $($element[0])).val(); $ctrl.btnSearchActive();};
-  var SetTime = function(context) {$scope.date[1] = $('input[name="time"]', $($element[0])).val(); $ctrl.btnSearchActive();};
-  
-  $ctrl.Init = function () {
+  $ctrl.$onInit = function () {
+    $scope.category = {"selectedIdx": [], "finalCategory": null, selected: null};//, current: {}
+    $scope.User = User; // $('body').attr('data-my-auth-id');
     
     $timeout(function(){
       $ctrl.param = $ctrl.param || {};
@@ -64,23 +54,38 @@ var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $windo
 
       $('.datepicker', $($element[0])).pickadate({// все настройки в файле русификации ru_RU.js
         clear: '',
-        onClose: SetDate,
+        onClose: $ctrl.SetDate,
         min: $ctrl.data.id ? undefined : new Date()
         //~ editable: $ctrl.data.transport ? false : true
       });//{closeOnSelect: true,}
       $('.timepicker', $($element[0])).pickatime({
-        onClose: SetTime
+        onClose: $ctrl.SetTime
         //~ editable: $ctrl.data.transport ? false : true
       });
       
-      SetDate();// переформат
-      SetTime();// переформат
+      $ctrl.SetDate();// переформат
+      $ctrl.SetTime();// переформат
       
       $ctrl.btnSearchActive();
       
     });
   };
   
+  $ctrl.SetDate = function (context) {
+    $scope.date[0] = $('input[name="date"]', $($element[0])).val();
+    $ctrl.btnSearchActive();
+  };
+  $ctrl.SetTime = function(context) {
+    $scope.date[1] = $('input[name="time"]', $($element[0])).val();
+    $ctrl.btnSearchActive();
+  };
+  
+  $ctrl.SetSearchResults = function (res) {
+    //~ console.log("SetSearchResults: "+res);
+    $ctrl.param.searchResults = res;
+    if ($ctrl.onSetSearchResultsCallback) $ctrl.onSetSearchResultsCallback (res);
+    //~ $ctrl.parentShowSearchResults({res: res === undefined ? 0 : res});
+  };
   
   var prevCategory;
   $ctrl.isCategorySelect = function () {
