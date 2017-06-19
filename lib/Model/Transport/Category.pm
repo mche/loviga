@@ -144,7 +144,7 @@ select *
 from cc
 ;
 
-@@ топ-категории/счет
+@@ топ-категории/счет?cached=1
 WITH RECURSIVE rc AS (
   select c1.id as "top_id", c1.id, c1.parent, c1.title, x.top_order, 1 AS level
   from 
