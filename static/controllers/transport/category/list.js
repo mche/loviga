@@ -8,9 +8,10 @@ var Controll = function ($scope, $timeout, $http, appRoutes) {
   $ctrl.$onInit = function () {
     if ($ctrl.level === undefined) $ctrl.level = 0;
     $ctrl.isTopLevel = ($ctrl.level === 0);
+    (!$ctrl.param) $ctrl.param = {};
     
     if ($ctrl.isTopLevel) {//$ctrl.data === undefined
-      $http.get($ctrl.staticData ? appRoutes.url_for('категории транспорта') : appRoutes.url_for('данные категорий транспорта')).then(function (resp) {
+      $http.get($ctrl.param['без счета'] ? appRoutes.url_for('категории транспорта') : appRoutes.url_for('данные категорий транспорта')).then(function (resp) {
         $ctrl.data = resp.data;
         $ctrl.InitData();
       });
@@ -98,7 +99,7 @@ angular.module('transport.category.list', ['appRoutes'])
 .component('transportCategoryList', {// много раз повторяется и шаблон проще жестко здесь зашить
   templateUrl: "transport/category/list",
   bindings: {
-      staticData: '<',// boolean влияет на получение корневых данных дерева (статика или с динамическим подсчетом)
+      param: '<',// boolean влияет на получение корневых данных дерева (статика или с динамическим подсчетом)
       disabled: '<',
       data: '<', // массив-данные потомков для уровня
       level: '<', // текущий уровень дерева 0,1,2.... по умочанию верний - нулевой
