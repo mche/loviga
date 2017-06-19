@@ -74,9 +74,9 @@ div({-class=>"nav-content yellow lighten-4",},
   $form_search =~ /\w/ ? div({-class=>"form-search hide-000",  -style=>"display: none; height: 60px; line-height: 60px;",}, $form_search,) : (),
 ),
 
-$c->include('main/top-category-list', handler0000=>'cgi.pl',),
-
 ),
+
+$c->include('main/top-category-list', handler0000=>'cgi.pl',),
 
 #~ $c->stash('javascripts', $c->stash('javascripts') ? () : []) && undef,
 #~ push(@{$c->stash('javascripts')}, "/controllers/sidenav/sidenav.js") && undef,
