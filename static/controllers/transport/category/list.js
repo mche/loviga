@@ -8,7 +8,7 @@ var Controll = function ($scope, $timeout, $http, appRoutes) {
   $ctrl.$onInit = function () {
     if ($ctrl.level === undefined) $ctrl.level = 0;
     $ctrl.isTopLevel = ($ctrl.level === 0);
-    (!$ctrl.param) $ctrl.param = {};
+    if(!$ctrl.param) $ctrl.param = {};
     
     if ($ctrl.isTopLevel) {//$ctrl.data === undefined
       $http.get($ctrl.param['без счета'] ? appRoutes.url_for('категории транспорта') : appRoutes.url_for('данные категорий транспорта')).then(function (resp) {
