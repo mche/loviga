@@ -6,7 +6,7 @@
 
 var moduleName = "TransportForm";
 
-var module = angular.module(moduleName, ['AppTplCache', 'appRoutes', 'transport.category.list', 'address.select', 'AddressType', 'tel.list', 'load.templateCache', 'img.upload.list', 'TransportStatus', 'User'])//'ngSanitize',
+var module = angular.module(moduleName, ['AppTplCache', 'appRoutes', 'transport.category.list', 'address.select', 'AddressType', 'tel.list', 'load.templateCache', 'img.upload.list', 'TransportStatus', 'User']);//'ngSanitize',
 
 var templateCache = ["/assets/transport/form.html"];
 
