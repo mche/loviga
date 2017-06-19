@@ -2,7 +2,7 @@ package Controll::Main;
 use Mojo::Base 'Mojolicious::Controller';
 
 has model_category => sub{ shift->app->models->{'Transport::Category'};}; # синглтон самого базового DBIx::Mojo::Model уже инициализирован! в плугине RoutesAuthDBI
-has top_category => sub {shift->model_category->топ_категории_счет()};
+has top_category => sub {shift->model_category->топ_категории_счет();};
 
 #~ sub new {
   #~ my $self = shift->SUPER::new(@_);
@@ -29,7 +29,7 @@ sub index {
     'head-title' => 'Грузоперевозки - спецтехника - размещение - поиск - заказ',
     'meta-description'=> "Система размещения и поиска предложений и спроса услуг по грузоперевозке и оказания услуг по работе специальной техники. Заказчик и исполнитель транспортных услуг находят друг друга.",
     'meta-keywords'=>"сервис грузоперевозок, автотехника, услуги транспорта, найти, заказать, разместить",#. join(', ', map $_->{title}, @{$c->топ_категории}),
-    #~ 'топ-категории'=>$c->top_category,
+    'топ-категории'=>$c->top_category,
   );
     #~ if $c->is_user_authenticated;
 }
