@@ -74,7 +74,7 @@
 
 <div ng-if="$ctrl.param.scrollToSave" ng-init="$ctrl.ScrollToSave()"></div>
   <!--дополнительные поля заявки телефон и пояснение -->
-<div id="notfound-card" ng-if="$ctrl.ready" ng-show="$ctrl.ShowNotFoundCard()" class="card light-green lighten-4" tabindex="1">
+<div id="notfound-card" ng-show="$ctrl.ShowNotFoundCard()" class="card light-green lighten-4" tabindex="1">
   <div class="card-content">
   <div ng-if="!$ctrl.data.transport && !$ctrl.data.id">
     <h2>Транспорт не найден</h2>
