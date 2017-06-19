@@ -10,15 +10,6 @@ var module = angular.module(moduleName, ['appRoutes', 'AppTplCache', 'transport.
 var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $window, appRoutes, User, AskFormData) {//
   var $ctrl = this;
 
-  var SetDate = function (context) {
-    $scope.date[0] = $('input[name="date"]', $($element[0])).val();
-    $ctrl.btnSearchActive();
-  };
-  var SetTime = function(context) {
-    $scope.date[1] = $('input[name="time"]', $($element[0])).val();
-    $ctrl.btnSearchActive();
-  };
-
   $ctrl.$onInit = function () {
     $scope.category = {"selectedIdx": [], "finalCategory": null, selected: null};//, current: {}
     $scope.User = User; // $('body').attr('data-my-auth-id');
@@ -63,21 +54,30 @@ var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $windo
 
       $('.datepicker', $($element[0])).pickadate({// все настройки в файле русификации ru_RU.js
         clear: '',
-        onClose: SetDate,
+        onClose: $ctrl.SetDate,
         min: $ctrl.data.id ? undefined : new Date()
         //~ editable: $ctrl.data.transport ? false : true
       });//{closeOnSelect: true,}
       $('.timepicker', $($element[0])).pickatime({
-        onClose: SetTime
+        onClose: $ctrl.SetTime
         //~ editable: $ctrl.data.transport ? false : true
       });
       
-      //~ SetDate();// переформат
-      //~ SetTime();// переформат
+      $ctrl.SetDate();// переформат
+      $ctrl.SetTime();// переформат
       
       $ctrl.btnSearchActive();
       
     });
+  };
+  
+  $ctrl.SetDate = function (context) {
+    $scope.date[0] = $('input[name="date"]', $($element[0])).val();
+    $ctrl.btnSearchActive();
+  };
+  $ctrl.SetTime = function(context) {
+    $scope.date[1] = $('input[name="time"]', $($element[0])).val();
+    $ctrl.btnSearchActive();
   };
   
   $ctrl.SetSearchResults = function (res) {
