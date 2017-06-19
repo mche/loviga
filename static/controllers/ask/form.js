@@ -72,8 +72,8 @@ var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $windo
         //~ editable: $ctrl.data.transport ? false : true
       });
       
-      SetDate();// переформат
-      SetTime();// переформат
+      //~ SetDate();// переформат
+      //~ SetTime();// переформат
       
       $ctrl.btnSearchActive();
       
