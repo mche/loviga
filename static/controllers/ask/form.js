@@ -82,19 +82,19 @@ var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $windo
   };
   
   
-  var prevCategoryId;
+  var prevCategory;
   $ctrl.isCategorySelect = function () {
     
     var curr = $scope.category.selected;
     //~ console.log("CategorySelected", $scope.category);
     
     if (!curr || !curr.id) return false;
-    if (prevCategoryId == curr.id) {
+    if (prevCategory === curr) {
       $ctrl.addr_type = true;
       return true;
       
     }
-    prevCategoryId = curr.id;
+    prevCategory = curr;
     $ctrl.addr_type = false;
     return false;
   };
