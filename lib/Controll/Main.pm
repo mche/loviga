@@ -3,8 +3,8 @@ use Mojo::Base 'Mojolicious::Controller';
 use Model::Transport::Category;
 
 #~ has dbh => sub { shift->app->dbh->{'main'} };
-my $model_category = Model::Transport::Category->new; # синглтон самого базового DBIx::Mojo::Model уже инициализирован! в плугине RoutesAuthDBI
-has топ_категории => sub {$model_category->топ_категории_счет()};
+has model_category => sub{ Model::Transport::Category->new;}; # синглтон самого базового DBIx::Mojo::Model уже инициализирован! в плугине RoutesAuthDBI
+has топ_категории => sub {shift->model_category->топ_категории_счет()};
 
 #~ sub new {
   #~ my $self = shift->SUPER::new(@_);

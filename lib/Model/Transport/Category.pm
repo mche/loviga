@@ -175,7 +175,7 @@ FROM rc
     ) t
 */
   "транспорт" t on rc."id" = t.category
-where
+where 
   not(coalesce(t.disabled, false))
 group by rc.top_id, rc.title, rc.top_order
 order by rc.top_order;
