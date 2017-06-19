@@ -1,9 +1,8 @@
 package Controll::Main;
 use Mojo::Base 'Mojolicious::Controller';
-use Model::Transport::Category;
 
 #~ has dbh => sub { shift->app->dbh->{'main'} };
-has model_category => sub{ Model::Transport::Category->new;}; # синглтон самого базового DBIx::Mojo::Model уже инициализирован! в плугине RoutesAuthDBI
+has model_category => sub{ shift->app->models->{'Transport::Category'};}; # синглтон самого базового DBIx::Mojo::Model уже инициализирован! в плугине RoutesAuthDBI
 has top_category => sub {shift->model_category->топ_категории_счет()};
 
 #~ sub new {
