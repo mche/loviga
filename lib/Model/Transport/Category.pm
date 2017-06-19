@@ -46,6 +46,11 @@ sub категории_для_поиска {
   $self->dbh->selectall_arrayref($self->sth('категории для поиска'), { Slice=> {} },);
 }
 
+sub топ_категории_счет {
+  my ($self,) = @_;
+  $self->dbh->selectall_arrayref($self->sth('топ-категории/счет'), { Slice=> {} },);
+}
+
 1;
 
 __DATA__
@@ -104,9 +109,9 @@ WITH cc AS (
   WITH RECURSIVE rc AS (
     select c1.id as "last_id", c1.id, c1.parent, 1 AS level
     from "категории транспорта" c1
-      ---left join "категории транспорта" c2 on c1.id=c2.parent
-    ---where c2.parent is null
-      --- and not(coalesce(c1.disabled, false))
+      left join "категории транспорта" c2 on c1.id=c2.parent
+    where c2.parent is null
+      and not(coalesce(c1.disabled, false))
     
      UNION
      
@@ -138,6 +143,42 @@ WITH cc AS (
 select *
 from cc
 ;
+
+@@ топ-категории/счет
+WITH RECURSIVE rc AS (
+  select c1.id as "top_id", c1.id, c1.parent, c1.title, x.top_order, 1 AS level
+  from 
+    (select x.*
+    from "категории транспорта" c, unnest(childs)  WITH ORDINALITY x(top_id, top_order)
+    where id=22
+    ) x
+    join "категории транспорта" c1 on c1.id=x.top_id
+  where  not(coalesce(c1.disabled, false))
+  
+   UNION
+   
+   SELECT rc."top_id", ch.id, ch.parent, rc.title, rc.top_order, rc.level + 1 AS level
+   FROM "категории транспорта" ch
+      JOIN rc ON ch.parent = rc.id
+    where not(coalesce(ch.disabled, false))
+)
+SELECT rc.top_id as id, rc.title, count(t.id) as count
+FROM rc
+  left join
+/*  пусть блокирует все адреса    ( select distinct t.id, t.category
+    from
+      "транспорт" t,
+      unnest(t.address_dsbl) un_adsbl
+      where
+        not(coalesce(t.disabled, false))
+        ---and not(coalesce(un_adsbl::boolean, false))
+    ) t
+*/
+  "транспорт" t on rc."id" = t.category
+where
+  not(coalesce(t.disabled, false))
+group by rc.top_id, rc.title, rc.top_order
+order by rc.top_order;
 
 @@ категории для поиска?cached=1
 select id, path,
