@@ -10,7 +10,7 @@ $c->layout('main', handler=>'ep', 'title-only'=>'Начало');
 
 #~ div({}, $c->include('forms/search', handler=>'cgi.pl',)),
 
-$c->include('main/top-category-list', handler=>'cgi.pl',),
+#~ $c->include('main/top-category-list', handler=>'cgi.pl',),
 
 $uid 
   ? ul(
