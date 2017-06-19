@@ -88,7 +88,7 @@ var Component = function  ($scope, $attrs, $element, $http, $q, $timeout, $windo
     var curr = $scope.category.selected;
     //~ console.log("CategorySelected", $scope.category);
     
-    if (!(curr && curr.id)) return false;
+    if (!curr || !curr.id) return false;
     if (prevCategoryId == curr.id) {
       $ctrl.addr_type = true;
       return true;
