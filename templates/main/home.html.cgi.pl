@@ -10,6 +10,7 @@ $c->layout('main', handler=>'ep', 'title-only'=>'Начало');
 
 #~ div({}, $c->include('forms/search', handler=>'cgi.pl',)),
 
+div({}, $c->include('main/top-category-list', handler=>'cgi.pl',)),
 
 $uid 
   ? ul(
@@ -35,8 +36,7 @@ $uid
       span({}, 'Мне нужен транспорт',),
     ),
   ),
-  
-)
+  )
   : $c->include('main/home-nonauth', handler=>'cgi.pl'), 
 
 

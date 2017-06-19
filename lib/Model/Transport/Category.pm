@@ -104,8 +104,8 @@ WITH cc AS (
   WITH RECURSIVE rc AS (
     select c1.id as "last_id", c1.id, c1.parent, 1 AS level
     from "категории транспорта" c1
-      left join "категории транспорта" c2 on c1.id=c2.parent
-    where c2.parent is null
+      ---left join "категории транспорта" c2 on c1.id=c2.parent
+    ---where c2.parent is null
       --- and not(coalesce(c1.disabled, false))
     
      UNION
