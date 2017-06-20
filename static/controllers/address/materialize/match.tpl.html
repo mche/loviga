@@ -17,7 +17,7 @@
     </a>
     <a href="javascript:" ng-click="$ctrl.disableAddr($index)" title="отключить адрес" >
       <!--i class="material-icons blue-text text-darken-2" ng-class="{'grey-text text-lighten-4': !!!$ctrl.isDisabled($select)}">check_circle</i-->
-      <i class="icon-ok-2 blue-text text-darken-2"></i>
+      <i class="icon-ok-2 blue-text text-darken-2" ng-class="{'grey-text text-lighten-4': !!!$ctrl.isDisabled($select)}"></i>
     </a>
     <a href="javascript:" ng-click="$ctrl.removeAddr($index)" title="удалить адрес"><i class="material-icons red-text">close</i></a>
   </span>
