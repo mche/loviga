@@ -22,36 +22,36 @@ var Controll = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   
   $ctrl.SearchAddress = function(select) {
     //~ console.log("SearchAddress ", select);
-    lib.SearchAddress(select, 'поиск адреса');
+    return lib.SearchAddress(select, 'поиск адреса');
   };
   
   $ctrl.clearAddr = function(select) {
-    lib.ClearAddr(select);
+    return lib.ClearAddr(select);
   };
   
   $ctrl.removeAddr = function(idx) {
-    lib.RemoveAddr(idx);
+    return lib.RemoveAddr(idx);
   };
   
   $ctrl.addrTop = function (idx, check) {// проверка тоже тут
-    lib.AddrTop(idx, check);
+    return lib.AddrTop(idx, check);
   };
   
   $ctrl.addrUp = function (idx, check) {// проверка тоже тут
-    lib.AddrUp(idx, check);
+    return lib.AddrUp(idx, check);
   };
   
   $ctrl.addrDown = function (idx) {
-    lib.AddrDown(idx);
+    return lib.AddrDown(idx);
   };
   
   $ctrl.disableAddr = function (idx) {
-    lib.DisableAddr(idx);
+    return lib.DisableAddr(idx);
     
   };
   
   $ctrl.isDisabled = function(select) {
-    lib.IsDisabled(select);
+    return lib.IsDisabled(select);
   };
 
 };
@@ -71,36 +71,36 @@ var Controll2 = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   
   
   $ctrl.SearchAddress = function(select, url_for) {
-    lib.SearchAddress(select, url_for);
+    return lib.SearchAddress(select, url_for);
   };
   
   $ctrl.clearAddr = function(select) {
-    lib.ClearAddr(select);
+    return lib.ClearAddr(select);
   };
   
   $ctrl.removeAddr = function(idx) {
-    lib.RemoveAddr(idx);
+    return lib.RemoveAddr(idx);
   };
   
   $ctrl.addrTop = function (idx, check) {// проверка тоже тут
-    lib.AddrTop(idx, check);
+    return lib.AddrTop(idx, check);
   };
   
   $ctrl.addrUp = function (idx, check) {// проверка тоже тут
-    lib.AddrUp(idx, check);
+    return lib.AddrUp(idx, check);
   };
   
   $ctrl.addrDown = function (idx) {
-    lib.AddrDown(idx);
+    return lib.AddrDown(idx);
   };
   
   $ctrl.disableAddr = function (idx) {
-    lib.DisableAddr(idx);
+    return lib.DisableAddr(idx);
     
   };
   
   $ctrl.isDisabled = function(select) {
-    lib.IsDisabled(select);
+    return lib.IsDisabled(select);
   };
 
 };
@@ -191,12 +191,10 @@ AddrDown: function ($ctrl, $scope, idx) {
 },
   
 DisableAddr: function ($ctrl, $scope, idx) {
-  $ctrl.data[idx].disabled = !$ctrl.data[idx].disabled;
-  console.log("DisableAddr", $ctrl.data[idx]);
+  return $ctrl.data[idx].disabled = !$ctrl.data[idx].disabled;
 },
   
 IsDisabled: function($ctrl, $scope, select) {
-  console.log("IsDisabled", select);
   if (!select.selected) return false;
   return !!select.selected.disabled;
 }
