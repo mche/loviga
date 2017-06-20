@@ -46,7 +46,6 @@ var Controll = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   };
   
   $ctrl.disableAddr = function (idx) {
-    console.log("disableAddr", idx);
     lib.DisableAddr(idx);
     
   };
@@ -96,7 +95,6 @@ var Controll2 = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   };
   
   $ctrl.disableAddr = function (idx) {
-    console.log("disableAddr", idx);
     lib.DisableAddr(idx);
     
   };
@@ -194,6 +192,7 @@ AddrDown: function ($ctrl, $scope, idx) {
   
 DisableAddr: function ($ctrl, $scope, idx) {
   $ctrl.data[idx].disabled = !$ctrl.data[idx].disabled;
+  console.log("DisableAddr", $ctrl.data[idx]);
 },
   
 IsDisabled: function($ctrl, $scope, select) {
