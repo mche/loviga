@@ -196,6 +196,7 @@ DisableAddr: function ($ctrl, $scope, idx) {
 },
   
 IsDisabled: function($ctrl, $scope, select) {
+  console.log("IsDisabled", select);
   if (!select.selected) return false;
   return !!select.selected.disabled;
 }
