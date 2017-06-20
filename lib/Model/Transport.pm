@@ -339,18 +339,19 @@ RETURN QUERY select distinct t.* ---не получится добавлять �
 from
   "транспорт" t,
   ---fias."дата по адресу"(-3, -4) tz,
-  unnest(t.address) un_addr,
-  unnest(t.address_dsbl) un_adsbl
+  unnest(t.address)  WITH ORDINALITY un_addr(val, idx),
+  unnest(t.address_dsbl) WITH ORDINALITY un_adsbl(val, idx)
 where
   not(coalesce(t.disabled, false))
+  and un_addr.idx=un_adsbl.idx
   ---and tz."интервал" > interval '0 second'  -- еще не просрочено
   ---and (t."status" or (not(t."status") and tz."завтра")) -- занят, но на завтра пожалуйста
   -- and (t."status" or now() - status_ts < undef_status_interval) -- если занят, но это было не больше интервала
-  and not(coalesce(un_adsbl::boolean, false))
+  and not(coalesce(un_adsbl.val::boolean, false))
   ---and t.category in (select id from "конечные категории транспорта"(%)) --2135
   and $1 in (select id from "родители категории транспорта"(t.category, false))
   and coalesce(t.addr_type[$2], false) = true -- тут всегда 1?
-  and un_addr = any(addrs)
+  and un_addr.val = any(addrs)
 ;
 END
 $func$ LANGUAGE plpgsql; -- лучше простого sql http://stackoverflow.com/questions/24755468/difference-between-language-sql-and-language-plpgsql-in-postgresql-functions
