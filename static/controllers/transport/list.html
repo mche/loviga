@@ -27,6 +27,7 @@
       <a ng-click="$ctrl.OpenTransport(it)" href="javascript:" class="waves-effect waves-teal" style="display:block;">
         <img ng-src="{{ $ctrl.ImgSrc(it) }}" alt="" class="circle" style=" height: 45px; width000:45px; vertical-align: middle;" >
         <h5 ng-show="it.title" class="inline">{{it.title}}</h5>
+        <br ng-show="it.title" />
         <span><span class="breadcrumb teal-text" ng-class="{'grey-text': it.disabled}" ng-repeat="c in it['категории']" >{{c.title}}</span></span>
         
       </a>
