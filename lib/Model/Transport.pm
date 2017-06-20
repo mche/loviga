@@ -119,6 +119,7 @@ __DATA__
 create table IF NOT EXISTS "{%= $schema %}"."{%= $tables->{main} %}" (
   id integer  NOT NULL DEFAULT nextval('{%= $sequence %}'::regclass) primary key,
   ts  timestamp without time zone NOT NULL DEFAULT now(),
+  title text,
   category int not null,
   disabled boolean,
   img text[],
