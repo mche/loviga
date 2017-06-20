@@ -95,6 +95,7 @@ var Controll2 = function ($scope, $attrs, AddressLib) {//loadTemplateCache
   };
   
   $ctrl.disableAddr = function (idx) {
+    console.log("disableAddr", idx);
     lib.DisableAddr(idx);
     
   };
