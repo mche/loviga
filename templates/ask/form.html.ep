@@ -2,7 +2,7 @@
 % my $has_ask = stash('есть мои заявки') // $c->app->models->{'Ask'}->есть_мои_заявки( $uid ) if $uid;
 % my $id = stash 'id';
 % my $title = $id ? 'Моя заявка на транспорт' : 'Мне нужен транспорт';
-% layout 'main';
+% layout $id ? 'wide' : 'main';
 
 <div class="right">
 % if ($has_ask) {
