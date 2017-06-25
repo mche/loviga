@@ -13,7 +13,7 @@
         <div class="card-title000">
           <a class="btn-floating000" ng-class000="$ctrl.btnClass(site)" href="javascript: " ng-click="$ctrl.Connect(site)" title="{{site.profile ? 'уже есть авторизация этого сайта' : 'присоединить в профиль вход через этот сайт'}}" style="line-height: normal; white-space: nowrap;">
             <img ng-src="{{$ctrl.imgSrc(site)}}" class="circle" ng-class="$ctrl.btnClass(site)" style="height: 40px; vertical-align: middle;" alt="{{site.name || site.site_name}} logo" >
-            <h4 class="inline cyan-text text-darken-3">{ site.title || site.name || site.site_name }}</h4>
+            <h4 class="inline cyan-text text-darken-3">{{ site.title || site.name || site.site_name }}</h4>
           </a>
           
           <span ng-if="site.profile" class="right">
