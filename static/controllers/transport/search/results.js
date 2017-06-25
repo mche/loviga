@@ -13,9 +13,10 @@ try {
 
 var Controll = function ($scope, $timeout, appRoutes) {
   var $ctrl = this;
+  $scope.parseInt = parseInt;
   //~ $ctrl.$attrs = $attrs;
   
-  $ctrl.Init = function() {
+  $ctrl.$onInit = function() {
     $ctrl.ready = true;
   };
   
