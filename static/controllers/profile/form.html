@@ -4,7 +4,7 @@
   
   <div class="card-content row">
     <div class="input-fields col s12 m6">
-      <h4>Имя Фамилия</h4>
+      <h4>Мое имя</h4>
       <div ng-repeat="n in ['Имя', 'Фамилия']" class="input-field inline000">
         <input name="names" type="text" ng-model="$ctrl.profile.names[$index]" placeholder="{{n}}">
       </div>
@@ -12,10 +12,10 @@
     
     <div class="input-fields col s12 m6">
       <div>
-        <h4>Логин в сервис</h4>
+        <h4>Вход в сервис</h4>
         <ul class="tabs tabs-transparent teal row" style="margin:0;">
-          <li class="tab col s6" ng-class000="{'active': !$ctrl.login_tel}"><a ng-click="$ctrl.ToggleLoginTel()" href="#login-email" ng-class000="{'active': !$ctrl.login_tel}">Почта</a></li>
-          <li class="tab col s6" ng-class000="{'active': $ctrl.login_tel}"><a ng-click="$ctrl.ToggleLoginTel()" href="#login-tel" ng-class000="{'active': $ctrl.login_tel}">Телефон</a></li>
+          <li class="tab col s6" ng-class000="{'active': !$ctrl.login_tel}"><a ng-click="$ctrl.ToggleLoginTel()" href="#login-email" ng-class000="{'active': !$ctrl.login_tel}">через Email</a></li>
+          <li class="tab col s6" ng-class000="{'active': $ctrl.login_tel}"><a ng-click="$ctrl.ToggleLoginTel()" href="#login-tel" ng-class000="{'active': $ctrl.login_tel}">через телефон</a></li>
         
         </ul>
         
