@@ -8,7 +8,7 @@ my $uid = $c->auth_user->{id};
 my $ou = $c->oauth->model->oauth_users_by_profile($uid);
 my $error = $c->vars( qw(error err) ) || delete $c->session->{oauth_err};
 my $conflict = $c->vars( qw(site) )
-  if $error && $error eq 'CONFLICT';
+  if $error && $error =~ s'CONFLICT'';
 my $old_pw = $c->vars( qw(pw old_pw) );
 
 
