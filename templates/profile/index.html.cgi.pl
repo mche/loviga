@@ -1,4 +1,4 @@
-$c->layout('main', handler=>'ep', title=>'Профиль');
+$c->layout('wide', handler=>'ep', title=>'Профиль');
 
 
 #~ my $dbh = $c->stash('dbh');
