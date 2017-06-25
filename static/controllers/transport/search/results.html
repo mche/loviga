@@ -11,14 +11,15 @@
           <img alt="" class="circle" ng-src="{{ $ctrl.ItemImgUrl(tr) }}" style=" height: 5rem;">
         </div>
         <div class="left" style="padding:0rem 0.5rem;">
-          <h5 ng-show="tr.title" class="inline">{{tr.title}}</h5>
-          <span class="fs10"><span class="breadcrumb " ng-class="{'teal-text': tr['статус'] == 'свободен' || tr['статус'] == 'завтра свободен', 'red-text': tr['статус'] == 'занят', 'grey-text': tr['статус'] == 'не активирован'}" ng-repeat="c in tr['категории']">{{ c.title }}</span></span>
-          <br />
+          <h5 ng-if="tr.title" class="inline yellow-text text-darken-4">{{tr.title}}</h5>
+          <h5 class="inline breadcrumb" ng-class="{'teal-text': tr['статус'] == 'свободен' || tr['статус'] == 'завтра свободен', 'red-text': tr['статус'] == 'занят', 'grey-text': tr['статус'] == 'не активирован'}" ng-repeat="c in tr['категории']">{{ c.title }}</h5>
+          <div>
             <span class="right000" style000="position:absolute; right:0;">
               <span class="chip" style="padding: 0rem 0.5rem;" title="почасовая оплата" ng-show="tr.price_hour">{{tr.price_hour}} руб/час</span>
               <span class="chip" style="padding: 0rem 0.5rem;" title="минимальное время" ng-show="tr.min_hour">от {{tr.min_hour}} час</span>
               <span class="chip" style="padding: 0rem 0.5rem;" title="оплата за километраж" ng-show="tr.price_km">{{tr.price_km}} руб/км</span>
             </span>
+          </div>
         </div>
         
       </a>
