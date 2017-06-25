@@ -17,7 +17,7 @@ div({-class=>"container",}, # $c->content('footer000') ||
         #~ span({}, 'Загрузить Android-приложение',),
         
       #~ ),
-      
+      '',
 
     ),
   ).
