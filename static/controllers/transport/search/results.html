@@ -7,10 +7,10 @@
     <li ng-repeat="tr in $ctrl.data" class="collection-item" style="padding:0;" id="transport{{ tr.id }}">
       
       <a class="waves-effect waves-teal " style="display:block; position:relative; padding: 0.3rem; height: auto; color: inherit; line-height: 48px;" href="javascript:" ng-click="$ctrl.ShowItem(tr)" style="height: inherit; padding: 0 1rem;" title="{{ $ctrl.ItemTitle(tr) }}">
-        <div class="left" style=" height: 5rem; line-height:5rem;">
+        <div class="left" style=" height: 10rem; line-height:10rem;">
           <img alt="" class="circle" ng-src="{{ $ctrl.ItemImgUrl(tr) }}" style=" height: 100%;">
         </div>
-        <div class="left" style="padding:0rem 0.5rem;">
+        <div class="" style="padding:0rem 1rem;">
           <div>
             <h5 ng-if="tr.title" class="inline yellow-text text-darken-4">{{tr.title}}</h5>
             <h5 class="inline breadcrumb" ng-class="{'teal-text': tr['статус'] == 'свободен' || tr['статус'] == 'завтра свободен', 'red-text': tr['статус'] == 'занят', 'grey-text': tr['статус'] == 'не активирован'}" ng-repeat="c in tr['категории']">{{ c.title }}</h5>
