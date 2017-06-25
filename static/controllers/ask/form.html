@@ -66,7 +66,7 @@
 <!-- кнопка поиска -->
 <a ng-if="!$ctrl.data.transport" class="btn btn-large waves-effect waves-teal" ng-click="$ctrl.Search()" href="javascript:" ng-disabled="!$ctrl.btnSearchActive()">
   <i class="material-icons">search</i>
-  <span>Поиск</span>
+  <span>Поиск транспорта</span>
 </a>
 <div ng-show="$ctrl.cancelerHttp" ng-include=" 'progress/search' "></div>
 <div ng-show="$ctrl.err" class="red-text" ng-html-bind="$ctrl.err"></div>
@@ -113,7 +113,7 @@
 
 <a ng-if000="!$ctrl.data.transport" class="btn btn-large btn-save waves-effect waves-teal" ng-click="$ctrl.SaveAsk()" href="javascript:" ng-disabled="!$ctrl.btnStoreActive()">
   <i class="material-icons">save</i>
-  <span>Сохранить</span>
+  <span>Сохранить заявку</span>
 </a>
 
 </div> <!-- end column form -->
