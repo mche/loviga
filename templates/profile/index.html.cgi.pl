@@ -23,7 +23,7 @@ div({},
       
       div({-class=>"col m8 s12"},
         div({-class=>"right"}, "#$uid"),
-        h2('Мой аккаунт', ),
+        h2({-class=>"center",},'Мой аккаунт', ),
         form_profile({'data-profile'=>"profile", 'data-old-pw'=>"'$old_pw'"}, ''),
         
 
