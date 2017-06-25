@@ -48,6 +48,9 @@ a.disabled, img.disabled {
     cursor: default;
     pointer-events: none;
 }
+a.hover:hover {
+    border-bottom: 1px solid;
+}
 
 img.disabled {
     background-color: color("grey", "darken-1");
