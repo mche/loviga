@@ -23,7 +23,7 @@ ul({-class=>"col s12 m8 collection", -style=>"border: none;",},
     a({-href=>"https://play.google.com/store/apps/details?id=ru.lovigazel.test",  -target=>"_blank",  -title=>"Загрузить андроид-приложение",},
       #~ i({-class=>"material-icons",}, 'exit_to_app'),
       #~ img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 3rem;vertical-align: middle;", -alt=>"android google play"}, ''),
-      img({-src=>"https://play.google.com/intl/es_es/badges/images/generic/ru_badge_web_generic.png",  -alt=>"Доступно в Google Play"}, ''),
+      img({-src=>"https://play.google.com/intl/es_es/badges/images/generic/ru_badge_web_generic.png",  -alt=>"Доступно в Google Play", -style=>"width:50%;"}, ''),
       #~ span({}, 'Загрузить Android-приложение',),
       
     ),
