@@ -14,7 +14,7 @@
 
 <h3 class="">
   <span ng-if="$ctrl.data.title" class="yellow-text text-darken-4">{{$ctrl.data.title}}</span>
-  <span class="breadcrumb black-text text-darken-4" ng-repeat="c in $ctrl.data['категории']">{{c.title}}</span>
+  <span class="breadcrumb teal-text text-darken-4" ng-repeat="c in $ctrl.data['категории']">{{c.title}}</span>
 </h3>
 
 <div class="row">
@@ -49,7 +49,7 @@
         <ul class="collection000">
           <li class="collection-item000" ng-if="$ctrl.data.price_hour || $ctrl.data.min_hour">
             <div ng-if="$ctrl.data.price_hour">Повременная: <span class="chip border000 white000 black-text">{{$ctrl.data.price_hour}} руб/час</span></div>
-            <div ng-if="$ctrl.data.min_hour">Минимальное время: <span class="chip border000 white000 black-text">{{$ctrl.data.min_hour}} час</span></div>
+            <div ng-if="$ctrl.data.min_hour">Минимальное время: <span class="chip border000 white000 black-text">от {{$ctrl.data.min_hour}} {{parseInt($ctrl.data.min_hour) == 1 ? 'часа' : 'часов'}}</span></div>
           </li>
           <li class="collection-item000" ng-if="$ctrl.data.price_km">Километраж: <span class="chip border000 white000 black-text">{{$ctrl.data.price_km}} руб/км</span></li>
         </ul>

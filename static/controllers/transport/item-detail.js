@@ -5,6 +5,7 @@ var moduleName = "TransportItemDetail";
 var Component = function  ($scope,$window, $timeout, User, appRoutes) {//, $http, $q, $timeout
   var $ctrl = this;
   $scope.User = User;
+  $scope.parseInt = parseInt;
   
   $ctrl.Init = function() {
     $timeout(function() {
