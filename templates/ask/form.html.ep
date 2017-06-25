@@ -13,6 +13,6 @@
 % }
 </div>
 
-<h2><%= $title %></h2>
+<h2 class="<%= $id ? 'center' : '' %>"><%= $title %></h2>
 
 %= include 'ask/form.component'
