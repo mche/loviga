@@ -9,6 +9,7 @@
 <!--div class="info">Raw tel: {{tel}}</div-->
 
 <div class="input-field">
+  <a ng-show="$ctrl.data.length > 1" ng-click="$ctrl.data.splice($index, 1)" href="javascript:" class="" style="position:absolute; right:0.5rem;"><i class="material-icons">cancel</i></a>
   <span class="material-icons000 tel prefix" style="">+7</span>
   <input type="tel" class="" style="margin-left: 0; padding-left: 3rem; width:auto;" ng-model="$ctrl.data[$index]" phone-input />
   <!--label for="tel" ng-class00="{active: ctrl.data.descr}">Телефон</label-->
