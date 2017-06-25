@@ -18,7 +18,7 @@
           
           <span ng-if="site.profile" class="right">
             <!--span class="fs8 cyan-text text-darken-3">#{{ site.profile.id || site.profile.uid || site.profile.user_id }}</span-->
-            <span class="fs8 cyan-text text-darken-3" title="id:{{ site.profile.id || site.profile.uid || site.profile.user_id }}">#{{ site.profile.first_name || site.profile.given_name || site.profile.name }} {{site.profile.last_name || site.profile.family_name }}</span>
+            <span class="fs8 cyan-text text-darken-3" title="id:{{ site.profile.id || site.profile.uid || site.profile.user_id }}">{{ site.profile.first_name || site.profile.given_name || site.profile.name }} {{site.profile.last_name || site.profile.family_name }}</span>
             <img ng-src="{{$ctrl.avatarSrc(site)}}" class="circle " style="height: 40px; vertical-align: middle;" >
           </span>
           
