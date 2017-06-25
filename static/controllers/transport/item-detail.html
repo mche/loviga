@@ -17,11 +17,12 @@
   <div class="col s12 l7 m12">
   <!--{{ $ctrl.data | json }}-->
     
-    <h4 ng-show="$ctrl.data.title" class="yellow-text text-darken-4">{{$ctrl.data.title}}</h4>
+    <!--h4 ng-show="$ctrl.data.title" class="yellow-text text-darken-4">{{$ctrl.data.title}}</h4-->
     
     <!--div class="card teal lighten-5">
       <div class="card-content"-->
         <h3 class="">
+          <span ng-if="$ctrl.data.title" class="yellow-text text-darken-4">{{$ctrl.data.title}}</span>
           <span class="breadcrumb black-text text-darken-4" ng-repeat="c in $ctrl.data['категории']">{{c.title}}</span>
         </h3>
       <!--/div>
