@@ -1,15 +1,15 @@
 
 
-h1("Заказать машину на сервисе грузоперевозок и услуг техники - “Лови Газель”"),
+h1({-class=>"center",},"Заказать машину на сервисе грузоперевозок и услуг техники - “Лови Газель”"),
 
 div({-class=>"row",},
 
-div({-class=>"col s12 m6",},
+div({-class=>"col s12 m4",},
   img({-src=>"/i/collage1.png", -class=>"yellow", -style=>"width:100%;", -alt=>"замечательный коллаж"}, ''),
 
 ),
 
-ul({-class=>"col s12 m6 collection", -style=>"border: none;",},
+ul({-class=>"col s12 m8 collection", -style=>"border: none;",},
   li({-class=>"collection-item right-align", -style=>"border: none;",}, a({-class=>"btn-large", -href=>$c->url_for('profile')->query(from=>$c->url_for->path), -title=>"Вход/Регистрация",},
     #~ i({-class=>"material-icons",}, 'exit_to_app'),
     i({-class=>"icon-login-1", -style=>"display: inline; vertical-align: middle;"}, ''),
@@ -17,12 +17,17 @@ ul({-class=>"col s12 m6 collection", -style=>"border: none;",},
     
   ),),
   
-  li({-class=>"collection-item right-align",}, a({-class=>"btn-large fs8 black", -href=>"https://play.google.com/store/apps/details?id=ru.lovigazel",  -target=>"_blank",  -title=>"Загрузить андроид-приложение",},
-    #~ i({-class=>"material-icons",}, 'exit_to_app'),
-    img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 3rem;vertical-align: middle;", -alt=>"android google play"}, ''),
-    span({}, 'Загрузить Android-приложение',),
-    
-  ),),
+  li({-class=>"collection-item right-align",}, 
+  #~ <a href='https://play.google.com/store/apps/details?id=ru.lovigazel.test&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='' src=''/></a>
+  
+    a({-href=>"https://play.google.com/store/apps/details?id=ru.lovigazel.test",  -target=>"_blank",  -title=>"Загрузить андроид-приложение",},
+      #~ i({-class=>"material-icons",}, 'exit_to_app'),
+      #~ img({-src=>"/i/logo/google-play.png", -class=>"white000", -style=>"height: 3rem;vertical-align: middle;", -alt=>"android google play"}, ''),
+      img({-src=>"https://play.google.com/intl/es_es/badges/images/generic/ru_badge_web_generic.png",  -alt=>"Доступно в Google Play"}, ''),
+      #~ span({}, 'Загрузить Android-приложение',),
+      
+    ),
+  ),
 ),
 
 ),
