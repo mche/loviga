@@ -5,7 +5,14 @@ my $error = $c->vars('error', 'err');
 $error && div({-style=>"color:red;"}, 'Ошибка авторизации: ', $error),
 
 #~ $c->req->headers->to_hash->{'X-Content-Only'} && $c->asset('profile.form-auth.js'),
-h2({-class=>"center",}, 'Авторизация и регистрация'),
+h2({-class=>"center",}, 'Вход и регистрация'),
+
+ul({}, 
+  li({}, "Для входа укажите свой логин - email-адрес или телефон в формате (ХХХ) ХХХ-ХХ-ХХ"),
+  li({}, "Для входа можно использовать регистрации других сайтов: Google.com, Yandex.ru, Mail.ru, Vkontakte.ru"),
+  li({}, "Для новой регистрации укажите логин. Можно использовать email-адрес или телефон в формате (ХХХ) ХХХ-ХХ-ХХ. После проверки логина потребуется ввести антибот-капча-код"),
+  li({}, "Для новой регистрации можно использовать регистрации других сайтов: Google.com, Yandex.ru, Mail.ru, Vkontakte.ru . После такой регистрации также возможно добавить логин/пароль в своем профиле."),
+),
 
 div({-class=>"row", "ng-app"=>"formAuth", "ng-controller"=>"formAuthControll as ctrl",}, 
   #~ div({-class=>"col m6 s12"},

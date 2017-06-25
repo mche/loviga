@@ -134,7 +134,7 @@ $c->include('main/top-category-list', handler0000=>'cgi.pl',),
     ),
   ),
   
-  li({}, a({-class00=>"btn-floating btn green-grey", -href=>$c->url_for('profile')->query(from=>$c->url_for->path),}, i({-class=>"material-icons",}, 'person'), 'Профиль', ), ),
+  li({}, a({-class00=>"btn-floating btn green-grey", -href=>$c->url_for('profile')->query(from=>$c->url_for->path),}, i({-class=>"material-icons",}, 'person'), 'Мой профиль', ), ),
   
   li({}, a({-class00=>"btn-floating btn green-grey", -href=>$c->url_for('logout')->query(from=>$c->url_for->path),}, i({-class=>"material-icons",}, 'lock_outline'), 'Выход', )),
   
