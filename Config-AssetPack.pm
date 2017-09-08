@@ -2,6 +2,7 @@
   'AssetPack::Che' => {
     pipes => [qw(Sass Css JavaScript HTML CombineFile)],
     CombineFile => {
+      version=>"2017-09-08 10:00",
       url_lines =>{# только для morbo
         'c/transport/list.html'=>"@@@ transport/list",
         'c/ask/form.html'=>"@@@ ask/form",
