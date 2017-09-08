@@ -3,7 +3,7 @@ div({-class=>"container",}, # $c->content('footer000') ||
   div({-class=>"row",},
 
     div({-class=>"col l7 m7 s12",},
-      h4({-class=>"white-text",},"Дружите с нами в социальных сетях"),
+      h4({-class=>"white-text right-align",}, "Дружите с нами в социальных сетях"),
 
     ),
     div({-class=>"col l5 m5 s12",},
