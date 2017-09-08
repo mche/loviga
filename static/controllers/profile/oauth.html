@@ -8,17 +8,17 @@
 
 <ul>
   <li ng-repeat="site in data" ng-class="{'site_joined': site.profile}">
-    <div class="card cyan lighten-5">
+    <div class="card teal lighten-5">
       <div class="card-content white-text">
         <div class="card-title000">
           <a class="btn-floating000" ng-class000="$ctrl.btnClass(site)" href="javascript: " ng-click="$ctrl.Connect(site)" title="{{site.profile ? 'уже есть авторизация этого сайта' : 'присоединить в профиль вход через этот сайт'}}" style="line-height: normal; white-space: nowrap;">
             <img ng-src="{{$ctrl.imgSrc(site)}}" class="circle" ng-class="$ctrl.btnClass(site)" style="height: 40px; vertical-align: middle;" alt="{{site.name || site.site_name}} logo" >
-            <h4 class="inline cyan-text text-darken-3">{{ site.title || site.name || site.site_name }}</h4>
+            <h4 class="inline teal-text text-darken-3">{{ site.title || site.name || site.site_name }}</h4>
           </a>
           
           <span ng-if="site.profile" class="right">
-            <!--span class="fs8 cyan-text text-darken-3">#{{ site.profile.id || site.profile.uid || site.profile.user_id }}</span-->
-            <span class="fs8 cyan-text text-darken-3" title="id:{{ site.profile.id || site.profile.uid || site.profile.user_id }}">{{ site.profile.first_name || site.profile.given_name || site.profile.name }} {{site.profile.last_name || site.profile.family_name }}</span>
+            <!--span class="fs8 teal-text text-darken-3">#{{ site.profile.id || site.profile.uid || site.profile.user_id }}</span-->
+            <span class="fs8 teal-text text-darken-3" title="id:{{ site.profile.id || site.profile.uid || site.profile.user_id }}">{{ site.profile.first_name || site.profile.given_name || site.profile.name }} {{site.profile.last_name || site.profile.family_name }}</span>
             <img ng-src="{{$ctrl.avatarSrc(site)}}" class="circle " style="height: 40px; vertical-align: middle;" >
           </span>
           
