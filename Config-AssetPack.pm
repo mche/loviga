@@ -2,7 +2,7 @@
   'AssetPack::Che' => {
     pipes => [qw(Sass Css JavaScript HTML CombineFile)],
     CombineFile => {
-      version=>"2017-09-08 10:00",
+      version=>"2017-09-08T10:00",
       url_lines =>{# только для morbo
         'c/transport/list.html'=>"@@@ transport/list",
         'c/ask/form.html'=>"@@@ ask/form",
@@ -307,8 +307,9 @@
       ],
       
       [ 'main.css'=> grep !/^#/, qw(
-        https://fonts.googleapis.com/icon?family=Material+Icons
-        https://fonts.googleapis.com/css?family=Roboto:400,700
+        #https://fonts.googleapis.com/icon?family=Material+Icons
+        fonts/material-icons/material-icons.css
+        #https://fonts.googleapis.com/css?family=Roboto:400,700
 #android/lib/onsenui/css/onsenui.css
 #android/lib/onsenui/css/onsen-css-components-default.css
         sass/main.scss
