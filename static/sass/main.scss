@@ -21,6 +21,7 @@ $primary-color-background1: color("teal", "darken-2") !default;
 @import "notification-icons";
 @import "autocomplete";
 @import "icon";
+@import "roboto";
 
 body {
     display: flex;
